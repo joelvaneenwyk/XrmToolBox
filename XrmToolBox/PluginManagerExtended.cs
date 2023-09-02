@@ -56,10 +56,10 @@ namespace XrmToolBox
         /// <summary>
         /// [DEPRECATED] This property should not be used anymore; it was replace by <see cref="ValidatedPluginsExt"/>.
         /// </summary>
-        public IEnumerable<Lazy<IXrmToolBoxPlugin, IPluginMetadata>> ValidatedPlugins
-        {
-            get { return Plugins?.Where(p => !ValidationErrors.ContainsKey(p.Metadata.Name)); }
-        }
+        public IEnumerable<Lazy<IXrmToolBoxPlugin, IPluginMetadata>> ValidatedPlugins =>
+#pragma warning disable CS0612 // Type or member is obsolete
+            Plugins?.Where(p => !ValidationErrors.ContainsKey(p.Metadata.Name));
+#pragma warning restore CS0612 // Type or member is obsolete
 
         public IEnumerable<Lazy<IXrmToolBoxPlugin, IPluginMetadataExt>> ValidatedPluginsExt
         {

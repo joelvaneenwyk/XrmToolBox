@@ -5,45 +5,26 @@
 
 using System;
 using System.ServiceModel;
+using JetBrains.Annotations;
 
 namespace XrmToolBox
 {
-    public class CrmExceptionHelper
+    public static class CrmExceptionHelper
     {
+        [UsedImplicitly]
         public static string GetErrorMessage(Exception error, bool returnWithStackTrace)
         {
             if (error.InnerException is FaultException)
             {
-                if (returnWithStackTrace)
-                {
-                    return (error.InnerException).ToString();
-                }
-                else
-                {
-                    return (error.InnerException).Message;
-                }
+                return returnWithStackTrace ? (error.InnerException).ToString() : (error.InnerException).Message;
             }
             else if (error.InnerException != null)
             {
-                if (returnWithStackTrace)
-                {
-                    return error.InnerException.ToString();
-                }
-                else
-                {
-                    return error.InnerException.Message;
-                }
+                return returnWithStackTrace ? error.InnerException.ToString() : error.InnerException.Message;
             }
             else
             {
-                if (returnWithStackTrace)
-                {
-                    return error.ToString();
-                }
-                else
-                {
-                    return error.Message;
-                }
+                return returnWithStackTrace ? error.ToString() : error.Message;
             }
         }
     }

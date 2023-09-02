@@ -132,7 +132,6 @@ namespace XrmToolBox
         {
             CheckUpdateOnStartup = true;
             IconDisplayMode = DisplayIcons.Large;
-            DisplayMostUsedFirst = false;
             DisplayRecentlyUpdatedFirst = false;
             Size = new FormSize();
             MostUsedList = new List<PluginUseCount>();
@@ -816,12 +815,8 @@ namespace XrmToolBox
                     object value, Type destType)
         {
             FieldInfo fi = enumType.GetField(Enum.GetName(enumType, value));
-            DescriptionAttribute dna = (DescriptionAttribute)Attribute.GetCustomAttribute(fi,
-                typeof(DescriptionAttribute));
-            if (dna != null)
-                return dna.Description;
-            else
-                return value.ToString();
+            DescriptionAttribute dna = (DescriptionAttribute)Attribute.GetCustomAttribute(fi, typeof(DescriptionAttribute));
+            return dna != null ? dna.Description : value.ToString();
         }
     }
 

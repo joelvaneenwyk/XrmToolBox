@@ -60,9 +60,9 @@ namespace XrmToolBox.ToolLibrary
 
                 if (!string.IsNullOrEmpty(settings.AdditionalRepositories))
                 {
-                    foreach (var repository in settings.AdditionalRepositories.Split(Environment.NewLine.ToCharArray()))
+                    foreach (string repository in settings.AdditionalRepositories.Split(Environment.NewLine.ToCharArray()))
                     {
-                        var parts = repository.Split('|');
+                        string[] parts = repository.Split('|');
                         if (parts.Length != 2) continue;
 
                         Repositories.Add(parts[0], parts[1]);
@@ -134,16 +134,16 @@ namespace XrmToolBox.ToolLibrary
             }
 
             var currentVersion = new Version(int.MaxValue, int.MaxValue, int.MaxValue, int.MaxValue);
-            var currentVersionFound = false;
+            bool currentVersionFound = false;
 
             var manifest = ManifestLoader.LoadDefaultManifest();
 
-            foreach (var file in files)
+            foreach (string file in files)
             {
                 if (Path.GetFileName(file).Length == 0)
                     continue;
 
-                var directoryName = Path.GetDirectoryName(file);
+                string directoryName = Path.GetDirectoryName(file);
                 if (directoryName == null)
                 {
                     continue;
@@ -219,7 +219,7 @@ namespace XrmToolBox.ToolLibrary
 
         public void DownloadPackage(ToolOperationEventArgs e, PluginUpdates pus)
         {
-            var cachePackagePath = Path.Combine(Paths.XrmToolBoxPath, "NugetPlugins", $"{e.Plugin.NugetId}.{e.Version}");
+            string cachePackagePath = Path.Combine(Paths.XrmToolBoxPath, "NugetPlugins", $"{e.Plugin.NugetId}.{e.Version}");
 
             string fullPath, destinationFile;
             if (!Directory.Exists(cachePackagePath))
@@ -248,14 +248,14 @@ namespace XrmToolBox.ToolLibrary
 
                     foreach (var part in package.GetParts())
                     {
-                        if (part.Uri.ToString().ToLower().IndexOf("/plugins/") < 0) continue;
+                        if (part.Uri.ToString().ToLower().IndexOf("/plugins/", StringComparison.Ordinal) < 0) continue;
 
-                        var fileName = part.Uri.ToString().Split(new string[] { "/Plugins/", "/plugins/" }, StringSplitOptions.RemoveEmptyEntries).Last();
+                        string fileName = part.Uri.ToString().Split(new string[] { "/Plugins/", "/plugins/" }, StringSplitOptions.RemoveEmptyEntries).Last();
                         fullPath = Path.Combine(cachePackagePath, fileName);
                         destinationFile = Path.Combine(Paths.PluginsPath, fileName);
 
-                        var directory = Path.GetDirectoryName(fullPath);
-                        if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+                        string directory = Path.GetDirectoryName(fullPath);
+                        if (!Directory.Exists(directory)) Directory.CreateDirectory(directory ?? string.Empty);
 
                         using (var partStream = part.GetStream())
                         {
@@ -291,14 +291,14 @@ namespace XrmToolBox.ToolLibrary
         public async Task<PackageVersion> GetPackageVersion(string packageName)
         {
             var response = await HttpClient.GetAsync($"https://api-v2v3search-0.nuget.org/query?q={packageName}").ConfigureAwait(false);
-            var data = await response.Content.ReadAsStringAsync();
+            string data = await response.Content.ReadAsStringAsync();
 
             var jo = JObject.Parse(data);
 
             var cc = ((JArray)jo["data"]).FirstOrDefault(d => d["id"].ToString() == packageName);
 
             var rResponse = await HttpClient.GetAsync(cc["registration"].ToString()).ConfigureAwait(false);
-            var rData = await rResponse.Content.ReadAsStringAsync();
+            string rData = await rResponse.Content.ReadAsStringAsync();
 
             var jor = JObject.Parse(rData);
 
@@ -413,7 +413,7 @@ namespace XrmToolBox.ToolLibrary
         {
             XrmToolBoxPlugins = new XtbPlugins();
 
-            foreach (var repository in Repositories.Keys)
+            foreach (string repository in Repositories.Keys)
             {
                 string url = Repositories[repository];
                 bool isCustomRepo = !url.StartsWith("https://www.xrmtoolbox.com/") && !url.StartsWith("https://xrmtoolboxdev.microsoftcrmportals.com/");
@@ -504,7 +504,7 @@ namespace XrmToolBox.ToolLibrary
                     if (pu.RequireRestart) continue;
 
                     // Can install plugin directly
-                    var destinationDirectory = Path.GetDirectoryName(pu.Destination);
+                    string destinationDirectory = Path.GetDirectoryName(pu.Destination);
                     if (destinationDirectory == null)
                     {
                         continue;
@@ -648,13 +648,13 @@ namespace XrmToolBox.ToolLibrary
             }
         }
 
-        private void AddFilesToUpdate(string folderPath, PluginUpdates pus, XtbPlugin tool)
+        private static void AddFilesToUpdate(string folderPath, PluginUpdates pus, XtbPlugin tool)
         {
-            foreach (var file in Directory.GetFiles(folderPath))
+            foreach (string file in Directory.GetFiles(folderPath))
             {
-                var fileName = new FileInfo(file).Name;
-                var fullPath = Path.Combine(folderPath, fileName);
-                var destinationFile = Path.Combine(Paths.PluginsPath, fileName);
+                string fileName = new FileInfo(file).Name;
+                string fullPath = Path.Combine(folderPath, fileName);
+                string destinationFile = Path.Combine(Paths.PluginsPath, fileName);
 
                 // XrmToolBox restart is required when a plugin has to be
                 // updated or when a new plugin shares files with other
@@ -671,17 +671,17 @@ namespace XrmToolBox.ToolLibrary
                 }
             }
 
-            foreach (var directory in Directory.GetDirectories(folderPath))
+            foreach (string directory in Directory.GetDirectories(folderPath))
             {
                 AddFilesToUpdate(directory, pus, tool);
             }
         }
 
-        private async Task AddPackageToInstall(PackageVersion pv, PluginUpdates updates)
+        private static async Task AddPackageToInstall(PackageVersion pv, PluginUpdates updates)
         {
-            var packageFolder = Path.Combine(Paths.XrmToolBoxPath, "NugetPlugins", $"{pv.PackageName}.{pv}");
-            var currentLocation = Assembly.GetExecutingAssembly().Location;
-            var folder = Path.GetDirectoryName(currentLocation);
+            string packageFolder = Path.Combine(Paths.XrmToolBoxPath, "NugetPlugins", $"{pv.PackageName}.{pv}");
+            string currentLocation = Assembly.GetExecutingAssembly().Location;
+            string folder = Path.GetDirectoryName(currentLocation);
 
             if (!Directory.Exists(packageFolder))
             {
@@ -695,7 +695,7 @@ namespace XrmToolBox.ToolLibrary
                 {
                     if (!part.Uri.ToString().EndsWith(".dll")) continue;
 
-                    var fileName = Path.GetFileName(part.Uri.ToString());
+                    string fileName = Path.GetFileName(part.Uri.ToString());
 
                     using (var fileStream = File.OpenWrite(Path.Combine(packageFolder, fileName)))
                     using (var stream = part.GetStream())
@@ -706,14 +706,14 @@ namespace XrmToolBox.ToolLibrary
                     updates.Plugins.Add(new PluginUpdate
                     {
                         Source = Path.Combine(packageFolder, fileName),
-                        Destination = Path.Combine(folder, fileName),
+                        Destination = Path.Combine(folder ?? string.Empty, fileName),
                         RequireRestart = true
                     });
                 }
             }
         }
 
-        private T GetContent<T>(string url, bool fromStoreFromPortalForm) where T : new()
+        private static T GetContent<T>(string url, bool fromStoreFromPortalForm) where T : new()
         {
             try
             {
@@ -749,33 +749,31 @@ namespace XrmToolBox.ToolLibrary
 
         private async Task<PackageVersion> GetSpecificPackageVersion(string packageName, JToken jo)
         {
-            var content = await HttpClient.GetByteArrayAsync(jo["packageContent"].ToString()).ConfigureAwait(false);
+            byte[] content = await HttpClient.GetByteArrayAsync(jo["packageContent"].ToString()).ConfigureAwait(false);
 
             var versionInfoResponse = await HttpClient.GetAsync(jo["@id"].ToString()).ConfigureAwait(false);
-            var versionInfoData = await versionInfoResponse.Content.ReadAsStringAsync();
+            string versionInfoData = await versionInfoResponse.Content.ReadAsStringAsync();
             var jov = JObject.Parse(versionInfoData);
 
-            var ceUrl = jov["catalogEntry"].ToString();
+            string ceUrl = jov["catalogEntry"]?.ToString();
             var ceResponse = await HttpClient.GetAsync(ceUrl).ConfigureAwait(false);
-            var ceData = await ceResponse.Content.ReadAsStringAsync();
+            string ceData = await ceResponse.Content.ReadAsStringAsync();
             var ceo = JObject.Parse(ceData);
 
-            var fullVersion = ceo["version"].ToString();
+            string fullVersion = ceo["version"]?.ToString();
 
-            var nugetVersion = new Version(fullVersion.Split('-')[0]);
-            var release = fullVersion.IndexOf("-") > 0 ? fullVersion.Split('-')[1] : "";
-            var isPreRelease = (bool)ceo["isPrerelease"];
-            var releasenotes = ceo["releaseNotes"].ToString();
+            var nugetVersion = new Version(fullVersion?.Split('-')[0] ?? string.Empty);
+            string release = fullVersion?.IndexOf("-") > 0 ? fullVersion.Split('-')[1] : "";
+            bool isPreRelease = (bool)ceo["isPrerelease"];
+            string releaseNotes = ceo["releaseNotes"]?.ToString();
 
-            string version = fullVersion;
-
-            return new PackageVersion(packageName, version, releasenotes, content);
+            return new PackageVersion(packageName, fullVersion, releaseNotes, content);
         }
 
-        private CompatibleState IsPluginDependencyCompatible(Version xtbDependencyVersion)
+        private static CompatibleState IsPluginDependencyCompatible(Version xtbDependencyVersion)
         {
             if (xtbDependencyVersion >= MinCompatibleVersion
-                && xtbDependencyVersion <= Assembly.GetEntryAssembly().GetName().Version)
+                && xtbDependencyVersion <= Assembly.GetEntryAssembly()?.GetName().Version)
             {
                 return CompatibleState.Compatible;
             }
@@ -785,12 +783,7 @@ namespace XrmToolBox.ToolLibrary
                 return CompatibleState.DoesntFitMinimumVersion;
             }
 
-            if (xtbDependencyVersion > Assembly.GetEntryAssembly().GetName().Version)
-            {
-                return CompatibleState.RequireNewVersionOfXtb;
-            }
-
-            return CompatibleState.Other;
+            return xtbDependencyVersion > Assembly.GetEntryAssembly()?.GetName().Version ? CompatibleState.RequireNewVersionOfXtb : CompatibleState.Other;
         }
 
         #endregion Methods

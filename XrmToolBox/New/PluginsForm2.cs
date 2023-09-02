@@ -168,7 +168,9 @@ namespace XrmToolBox.New
                                 new Bitmap(image).Save(imagePath);
                             }
                             catch (Exception error)
-                            { }
+                            {
+                                var lm = new LogManager(typeof(PluginsForm2));
+                                lm.LogWarning($"Failed to get category image: {error.Message}");}
                         }
                     }
 
@@ -200,6 +202,8 @@ namespace XrmToolBox.New
             }
             catch (Exception error)
             {
+                var lm = new LogManager(typeof(PluginsForm2));
+                lm.LogWarning($"Failed to get category image: {error.Message}");
                 pnlNavLeft.Visible = false;
             }
         }

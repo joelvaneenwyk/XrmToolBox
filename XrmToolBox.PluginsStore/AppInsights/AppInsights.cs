@@ -57,7 +57,7 @@ public class AiConfig
         PluginVersion = LoggingAssembly.GetName().Version.PaddedVersion(1, 4, 2, 2);
         InstallationId = InstallationInfo.Instance.InstallationId;
         // This will disable logging if the calling assembly is compiled with debug configuration
-        LogEvents = !LoggingAssembly.GetCustomAttributes<DebuggableAttribute>().Any(d => d.IsJITTrackingEnabled);
+        LogEvents = false; // !LoggingAssembly.GetCustomAttributes<DebuggableAttribute>().Any(d => d.IsJITTrackingEnabled);
 
         var isc = new XrmToolBox.Extensibility.ItSecurityChecker();
         LogEvents = LogEvents && !isc.IsStatisticsCollectDisabled();

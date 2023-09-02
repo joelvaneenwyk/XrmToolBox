@@ -131,14 +131,18 @@ namespace XrmToolBox.ToolLibrary.UserControls
                     }
                     catch (NullReferenceException)
                     {
-                        continue;
+                        // Ignore
                     }
                 }
             };
             bw.RunWorkerCompleted += (s, evt) =>
             {
                 cbbVersions.Items.Clear();
-                cbbVersions.Items.AddRange(plugin.Versions.OrderByDescending(v => v.Version).ToArray());
+                cbbVersions.Items.AddRange(
+                    plugin.Versions
+                        .OrderByDescending(v => v.Version)
+                        .Select(x => x as object)
+                        .ToArray());
 
                 if (cbbVersions.Items.Count != 0)
                 {
@@ -213,7 +217,7 @@ namespace XrmToolBox.ToolLibrary.UserControls
         private void SetControlsDisplay()
         {
             var r = new Regex("([ ]{2,})");
-            var releaseNotes = plugin.LatestReleaseNote != null ? r.Replace(plugin.LatestReleaseNote.Replace("\t", ""), "") : "";
+            string releaseNotes = plugin.LatestReleaseNote != null ? r.Replace(plugin.LatestReleaseNote.Replace("\t", ""), "") : "";
 
             lblToolName.Text = $"{plugin.Name} {plugin.CurrentVersion}";
             lblToolAuthors.Text = plugin.Authors;

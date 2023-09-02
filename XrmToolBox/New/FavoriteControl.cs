@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
+using JetBrains.Annotations;
 using XrmToolBox.AppCode;
 using XrmToolBox.New.EventArgs;
 using Timer = System.Timers.Timer;
@@ -13,6 +14,8 @@ namespace XrmToolBox.New
     {
         private readonly string base64Image;
         private readonly Favorite item;
+
+        [UsedImplicitly]
         private Thread clickThread;
 
         public FavoriteControl(string base64Image, Favorite item)

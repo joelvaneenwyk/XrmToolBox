@@ -855,7 +855,7 @@ Would you like to reinstall last stable release of connection controls?";
                     Options.Instance.LastAdvertisementDisplay > DateTime.Now ||
                     Options.Instance.LastAdvertisementDisplay.AddDays(7) < DateTime.Now)
                 {
-                    bool displayAdvertisement = true;
+                    bool displayAdvertisement = false;
                     try
                     {
                         var assembly = Assembly.LoadFile(
@@ -1039,10 +1039,13 @@ Would you like to reinstall last stable release of connection controls?";
             if (e.Plugin.Metadata.Interfaces.Contains(nameof(INoConnectionRequired)))
             {
                 var ctrl = DisplayPluginControl(e.Plugin);
+
+                // ReSharper disable once SuspiciousTypeConversion.Global
                 if (ctrl is IDuplicatableTool dt && e.SourceTool != null)
                 {
                     dt.ApplyState(e.State ?? e.SourceTool.GetState());
                 }
+
                 Cursor = Cursors.Default;
                 return;
             }
