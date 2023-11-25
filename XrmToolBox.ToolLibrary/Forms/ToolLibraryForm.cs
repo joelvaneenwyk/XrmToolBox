@@ -213,7 +213,7 @@ namespace XrmToolBox.ToolLibrary.Forms
             Process.Start("https://www.xrmtoolbox.com/documentation/for-it-administrators/set-your-own-tools-repositories-for-tool-library/");
         }
 
-        private async Task MainLoad(bool isRefresh = false)
+        private void MainLoad(bool isRefresh = false)
         {
             lvTools.Visible = false;
             pnlLoading.Visible = true;
@@ -375,6 +375,7 @@ namespace XrmToolBox.ToolLibrary.Forms
         {
             chContent.Width = lvTools.Width - chCheckbox.Width - 26;
 
+            if(lblLoading.Parent != null)
             lblLoading.Location = new Point(Width / 2 - lblLoading.Width / 2, lblLoading.Parent.Height / 2 - lblLoading.Height / 2);
         }
 

@@ -26,7 +26,6 @@ using XrmToolBox.Extensibility.Args;
 using XrmToolBox.Extensibility.Interfaces;
 using XrmToolBox.Forms;
 using XrmToolBox.New.EventArgs;
-using XrmToolBox.PluginsStore;
 using XrmToolBox.ToolLibrary.Forms;
 
 namespace XrmToolBox.New
@@ -38,6 +37,7 @@ namespace XrmToolBox.New
         private readonly Dictionary<PluginForm, ConnectionDetail> pluginConnections = new Dictionary<PluginForm, ConnectionDetail>();
         private readonly List<PluginControlStatus> pluginControlStatuses = new List<PluginControlStatus>();
         private readonly IToolsForm pluginsForm;
+        private readonly string windowTitleSuffix;
         private AppInsights ai = new AppInsights(new AiConfig(AiEndpoint, AiKey));
         private CrmConnectionStatusBar ccsb;
         private ConnectionManager cManager;
@@ -54,7 +54,6 @@ namespace XrmToolBox.New
         private StartPage startPage;
         private IToolLibrary store;
         private ToolTip toolTip = new ToolTip();
-        private readonly string windowTitleSuffix;
 
         public NewForm(string[] args)
         {
@@ -324,21 +323,15 @@ Would you like to reinstall last stable release of connection controls?";
         {
             try
             {
-                if (Options.Instance.UseLegacyToolLibrary)
+                ItSecurityChecker isc = new ItSecurityChecker();
+                isc.LoadRepositories();
+                store = new ToolLibrary.ToolLibrary(Options.Instance, isc.Repositories);
+                store.AllowConnectionControlPreRelease = Options.Instance.ConnectionControlsAllowPreReleaseUpdates;
+                ((PluginsForm2)pluginsForm).Store = (ToolLibrary.ToolLibrary)store;
+
+                if (!((ToolLibrary.ToolLibrary)store).HasConnectivityToXrmToolBoxPortal)
                 {
-                    if (store == null)
-                    {
-                        store = new StoreFromPortal(Options.Instance.ConnectionControlsAllowPreReleaseUpdates);
-                        await ((StoreFromPortal)store).LoadNuget();
-                    }
-                }
-                else
-                {
-                    ItSecurityChecker isc = new ItSecurityChecker();
-                    isc.LoadRepositories();
-                    store = new ToolLibrary.ToolLibrary(Options.Instance, isc.Repositories);
-                    store.AllowConnectionControlPreRelease = Options.Instance.ConnectionControlsAllowPreReleaseUpdates;
-                    ((PluginsForm2)pluginsForm).Store = (ToolLibrary.ToolLibrary)store;
+                    throw new Exception("Unable to connect to load tools. Please check your network settings");
                 }
 
                 return true;
@@ -617,6 +610,7 @@ Would you like to reinstall last stable release of connection controls?";
                 var connection = cList.Connections.FirstOrDefault(c => c.ConnectionId == cid);
                 if (connection != null)
                 {
+                    connection.ParentConnectionFile = file;
                     connectionFound = true;
                     initialPluginName = e.Item.PluginName;
                     initialConnectionName = e.Item.ConnectionName;
@@ -1806,107 +1800,73 @@ Would you like to reinstall last stable release of connection controls?";
 
             pnlPluginsUpdate.Visible = false;
 
-            if (Options.Instance.UseLegacyToolLibrary)
+            if (libraryForm == null || libraryForm.IsDisposed)
             {
-                // If the options were not initialized, it means we are using the
-                // new plugins store for the first time. Copy values from main
-                // options file
-                if (!PluginsStore.Options.Instance.IsInitialized)
+                if (!(store is ToolLibrary.ToolLibrary))
                 {
-                    PluginsStore.Options.Instance.DisplayPluginsStoreOnStartup = Options.Instance.DisplayPluginsStoreOnStartup;
-                    PluginsStore.Options.Instance.PluginsStoreShowInstalled = Options.Instance.PluginsStoreShowInstalled;
-                    PluginsStore.Options.Instance.PluginsStoreShowIncompatible = Options.Instance.PluginsStoreShowIncompatible;
-                    PluginsStore.Options.Instance.PluginsStoreShowNew = Options.Instance.PluginsStoreShowNew;
-                    PluginsStore.Options.Instance.PluginsStoreShowUpdates = Options.Instance.PluginsStoreShowUpdates;
-                    PluginsStore.Options.Instance.UseLegacy = false;
-                    PluginsStore.Options.Instance.IsInitialized = true;
+                    ItSecurityChecker isc = new ItSecurityChecker();
+                    isc.LoadRepositories();
+                    store = new ToolLibrary.ToolLibrary(Options.Instance, isc.Repositories);
+                    store.LoadTools().GetAwaiter().GetResult();
                 }
 
-                using (var form = new StoreFormFromPortal(Options.Instance.ConnectionControlsAllowPreReleaseUpdates))
+                if (store.PluginsCount == 0 || store.Categories == null)
                 {
-                    form.PluginsClosingRequested += (s, evt) =>
-                    {
-                        RequestCloseTabs(dpMain.Contents.OfType<PluginForm>(), new PluginCloseInfo(ToolBoxCloseReason.CloseAll));
-                    };
+                    MessageBox.Show(this, "Tool Library is not yet initialzed, please wait few seconds", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                    // Avoid scanning for new files during Plugins Store usage.
-                    pluginsForm.PluginManager.IsWatchingForNewPlugins = false;
-                    form.ShowDialog(this);
-                    pluginsForm.PluginManager.IsWatchingForNewPlugins = true;
-                    pluginsForm.ReloadPluginsList();
-                    PrepareCategories();
-                }
-                // Apply option to show Plugins Store on startup on main options
-                if (Options.Instance.DisplayPluginsStoreOnStartup != PluginsStore.Options.Instance.DisplayPluginsStoreOnStartup)
+                libraryForm = new ToolLibraryForm((ToolLibrary.ToolLibrary)store, Options.Instance);
+                libraryForm.PluginsClosingRequested += (s, evt) =>
                 {
-                    Options.Instance.DisplayPluginsStoreOnStartup = PluginsStore.Options.Instance.DisplayPluginsStoreOnStartup ?? false;
-                }
-            }
-            else
-            {
-                if (libraryForm == null || libraryForm.IsDisposed)
+                    RequestCloseTabs(dpMain.Contents.OfType<PluginForm>(), new PluginCloseInfo(ToolBoxCloseReason.CloseAll));
+                };
+                libraryForm.PluginsOpeningRequested += (s, evt) =>
                 {
-                    if (!(store is ToolLibrary.ToolLibrary))
+                    var plm = PluginManagerExtended.Instance.Manifest.PluginMetadata.FirstOrDefault(pm => evt.Plugin.Files.Any(f => Path.GetFileName(f).Equals(Path.GetFileName(pm.AssemblyFilename), StringComparison.InvariantCultureIgnoreCase)));
+                    if (plm == null)
                     {
-                        ItSecurityChecker isc = new ItSecurityChecker();
-                        isc.LoadRepositories();
-                        store = new ToolLibrary.ToolLibrary(Options.Instance, isc.Repositories);
-                        store.LoadTools().GetAwaiter().GetResult();
+                        MessageBox.Show(this, "Unable to find the tool metadata!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
-
-                    if (store.PluginsCount == 0 || store.Categories == null)
+                    var plugin = PluginManagerExtended.Instance.ValidatedPluginsExt.FirstOrDefault(p => p.Metadata.Name == plm.Name);
+                    if (plugin == null)
                     {
-                        MessageBox.Show(this, "Tool Library is not yet initialzed, please wait few seconds", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(this, "Unable to find the tool metadata!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
-                    libraryForm = new ToolLibraryForm((ToolLibrary.ToolLibrary)store, Options.Instance);
-                    libraryForm.PluginsClosingRequested += (s, evt) =>
+                    if (service == null)
                     {
-                        RequestCloseTabs(dpMain.Contents.OfType<PluginForm>(), new PluginCloseInfo(ToolBoxCloseReason.CloseAll));
-                    };
-                    libraryForm.PluginsOpeningRequested += (s, evt) =>
-                    {
-                        var plm = PluginManagerExtended.Instance.Manifest.PluginMetadata.FirstOrDefault(pm => evt.Plugin.Files.Any(f => Path.GetFileName(f).Equals(Path.GetFileName(pm.AssemblyFilename), StringComparison.InvariantCultureIgnoreCase)));
-                        if (plm == null)
-                        {
-                            MessageBox.Show(this, "Unable to find the tool metadata!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                        var plugin = PluginManagerExtended.Instance.ValidatedPluginsExt.FirstOrDefault(p => p.Metadata.Name == plm.Name);
-                        if (plugin == null)
-                        {
-                            MessageBox.Show(this, "Unable to find the tool metadata!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        if (service == null)
-                        {
-                            ConnectUponApproval(plugin);
-                        }
-                        else
-                        {
-                            DisplayPluginControl(plugin);
-                        }
-                    };
-                    ((ToolLibrary.ToolLibrary)store).OnToolsMetadataRefreshRequested += (s, evt) =>
-                    {
-                        PluginManagerExtended.Instance.Recompose();
-                    };
-                    ((ToolLibrary.ToolLibrary)store).PluginsUpdated += (s, evt) =>
-                    {
-                        pluginsForm.ReloadPluginsList();
-                        PrepareCategories();
-                    };
-
-                    if (showUpdateOnly)
-                    {
-                        libraryForm.ShowUpdatesOnly();
+                        ConnectUponApproval(plugin);
                     }
-                }
+                    else
+                    {
+                        DisplayPluginControl(plugin);
+                    }
+                };
+                ((ToolLibrary.ToolLibrary)store).OnToolsMetadataRefreshRequested += (s, evt) =>
+                {
+                    PluginManagerExtended.Instance.Recompose();
+                };
+                ((ToolLibrary.ToolLibrary)store).PluginsUpdated += (s, evt) =>
+                {
+                    pluginsForm.ReloadPluginsList();
+                    PrepareCategories();
+                };
 
-                libraryForm.Show(dpMain, DockState.Document);
+                if (showUpdateOnly)
+                {
+                    libraryForm.ShowUpdatesOnly();
+                }
             }
+
+            libraryForm.Show(dpMain, DockState.Document);
+        }
+
+        private void SettingsForm_OnProxySettingsChanged(object sender, System.EventArgs e)
+        {
+            llRetryInitToolLibrary_LinkClicked(this, new LinkLabelLinkClickedEventArgs(llRetryInitToolLibrary.Links[0]));
         }
 
         private void tsbImpersonate_Click(object sender, System.EventArgs e)
@@ -1972,6 +1932,7 @@ Would you like to reinstall last stable release of connection controls?";
                 if (settingsForm == null || settingsForm.IsDisposed)
                 {
                     settingsForm = new SettingsForm();
+                    settingsForm.OnProxySettingsChanged += SettingsForm_OnProxySettingsChanged;
                 }
 
                 settingsForm.Show(dpMain, DockState.Document);
@@ -2028,18 +1989,6 @@ Would you like to reinstall last stable release of connection controls?";
             else if (e.ClickedItem == tsmiChangeTabConnection)
             {
                 ConnectUponApproval(new RequestConnectionEventArgs { ActionName = "", Control = ((PluginForm)dpMain.ActiveContent).Control });
-            }
-        }
-
-        private void tsmiNameTopLevelWindow_TextChanged(object sender, System.EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tsmiNameTopLevelWindow.Text))
-            {
-                Text = windowTitleSuffix;
-            }
-            else
-            {
-                Text = $"{tsmiNameTopLevelWindow.Text} - {windowTitleSuffix}";
             }
         }
 
@@ -2130,6 +2079,18 @@ Would you like to reinstall last stable release of connection controls?";
             else if (e.ClickedItem.Tag is PluginForm pf)
             {
                 pf.EnsureVisible(dpMain, DockState.Document);
+            }
+        }
+
+        private void tsmiNameTopLevelWindow_TextChanged(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tsmiNameTopLevelWindow.Text))
+            {
+                Text = windowTitleSuffix;
+            }
+            else
+            {
+                Text = $"{tsmiNameTopLevelWindow.Text} - {windowTitleSuffix}";
             }
         }
 
@@ -2227,6 +2188,5 @@ Would you like to reinstall last stable release of connection controls?";
             pnlPluginsUpdate.Visible = false;
             OpenPluginsStore(true);
         }
-
     }
 }

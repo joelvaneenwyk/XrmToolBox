@@ -333,6 +333,16 @@ namespace XrmToolBox.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Eraser24 {
+            get {
+                object obj = ResourceManager.GetObject("Eraser24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Euro24 {
             get {
                 object obj = ResourceManager.GetObject("Euro24", resourceCulture);
@@ -376,6 +386,16 @@ namespace XrmToolBox.Properties {
         internal static System.Drawing.Bitmap Help24 {
             get {
                 object obj = ResourceManager.GetObject("Help24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HiddenTools32 {
+            get {
+                object obj = ResourceManager.GetObject("HiddenTools32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -746,6 +766,16 @@ namespace XrmToolBox.Properties {
         internal static System.Drawing.Bitmap Proxy32 {
             get {
                 object obj = ResourceManager.GetObject("Proxy32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Refresh24 {
+            get {
+                object obj = ResourceManager.GetObject("Refresh24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

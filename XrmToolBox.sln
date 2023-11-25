@@ -92,31 +92,6 @@ Global
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|x64.ActiveCfg = Release|Any CPU
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|x64.Build.0 = Release|Any CPU
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|x86.ActiveCfg = Release|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|x86.Build.0 = Release|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug Without GemBox|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug Without GemBox|Any CPU.Build.0 = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug Without GemBox|x64.ActiveCfg = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug Without GemBox|x64.Build.0 = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug Without GemBox|x86.ActiveCfg = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug Without GemBox|x86.Build.0 = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|x64.Build.0 = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|x86.Build.0 = Debug|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|x64.ActiveCfg = Release|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|x64.Build.0 = Release|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|x86.ActiveCfg = Release|Any CPU
-		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|x86.Build.0 = Release|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug Without GemBox|Any CPU.ActiveCfg = Debug|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug Without GemBox|Any CPU.Build.0 = Debug|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug Without GemBox|x64.ActiveCfg = Debug|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug Without GemBox|x64.Build.0 = Debug|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug Without GemBox|x86.ActiveCfg = Debug|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug Without GemBox|x86.Build.0 = Debug|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -202,8 +177,8 @@ Global
 		{4C497B9C-B9DD-4B3D-8ECC-C504AFCADD65} = {B383B25D-3FB2-43C8-A69B-F0D576649EBD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		BuildVersion_ConfigurationName = Release
 		SolutionGuid = {5CC3AFE2-F092-40F3-A540-539389A045B6}
+		BuildVersion_ConfigurationName = Release
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutocomplete\MarkMpn.XmlSchemaAutocomplete.Scintilla\MarkMpn.XmlSchemaAutocomplete.Scintilla.projitems*{4c497b9c-b9dd-4b3d-8ecc-c504afcadd65}*SharedItemsImports = 13

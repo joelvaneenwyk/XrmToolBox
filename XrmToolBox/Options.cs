@@ -649,7 +649,30 @@ namespace XrmToolBox
 
         #endregion Session
 
-        #endregion Properties
+        #region Proxy
+
+        [Browsable(false)]
+        public bool ByPassProxyOnLocal { get; set; }
+
+        [Browsable(false)]
+        public string Password { get; set; }
+
+        [Browsable(false)]
+        public string ProxyAddress { get; set; }
+
+        [Browsable(false)]
+        public bool UseCustomProxy { get; set; }
+
+        [Browsable(false)]
+        public bool UseDefaultCredentials { get; set; }
+
+        [Browsable(false)]
+        public bool UseInternetExplorerProxy { get; set; }
+
+        [Browsable(false)]
+        public string UserName { get; set; }
+
+        #endregion Proxy
 
         #region Methods
 
@@ -777,6 +800,8 @@ namespace XrmToolBox
         }
 
         #endregion Methods
+
+        #endregion Properties
     }
 
     internal class CustomEnumConverter : EnumConverter

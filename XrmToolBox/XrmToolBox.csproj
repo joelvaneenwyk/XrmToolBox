@@ -149,6 +149,8 @@
     </Compile>
     <Compile Include="Announcement\AnnouncementManager.cs" />
     <Compile Include="Announcement\AnnouncementSettings.cs" />
+    <Compile Include="AppCode\AppInsights\AppInsights.cs" />
+    <Compile Include="AppCode\AppInsights\InstallationInfo.cs" />
     <Compile Include="AppCode\DockExtensions.cs" />
     <Compile Include="AppCode\Extensions.cs" />
     <Compile Include="AppCode\IToolsForm.cs" />
@@ -176,6 +178,12 @@
     </Compile>
     <Compile Include="Controls\ApplicationProtocolControl.Designer.cs">
       <DependentUpon>ApplicationProtocolControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HiddenToolsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HiddenToolsControl.Designer.cs">
+      <DependentUpon>HiddenToolsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\AssembliesControl.cs">
       <SubType>UserControl</SubType>
@@ -206,6 +214,12 @@
     </Compile>
     <Compile Include="Controls\DropdownSettingsControl.designer.cs">
       <DependentUpon>DropdownSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HighlightItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HighlightItem.Designer.cs">
+      <DependentUpon>HighlightItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ISettingsControl.cs" />
     <Compile Include="Controls\NavLeftItem.cs">
@@ -411,6 +425,9 @@
     <EmbeddedResource Include="Controls\ApplicationProtocolControl.resx">
       <DependentUpon>ApplicationProtocolControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HiddenToolsControl.resx">
+      <DependentUpon>HiddenToolsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\AssembliesControl.resx">
       <DependentUpon>AssembliesControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\DropdownSettingsControl.resx">
       <DependentUpon>DropdownSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HighlightItem.resx">
+      <DependentUpon>HighlightItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\NavLeftItem.resx">
       <DependentUpon>NavLeftItem.cs</DependentUpon>
@@ -651,6 +671,9 @@
     <None Include="Resources\Dataverse24.png" />
     <None Include="Resources\PowerApps24.png" />
     <None Include="Resources\Dynamics365_24.png" />
+    <None Include="Resources\Hide32.png" />
+    <None Include="Resources\Eraser24.png" />
+    <None Include="Resources\Refresh24.png" />
     <Content Include="Resources\three_tags.png" />
     <None Include="Resources\www_page.png" />
     <None Include="Resources\ToolsListDisplay32.png" />
@@ -659,6 +682,9 @@
     <None Include="Resources\Uninstall24.png" />
     <None Include="Resources\Web24.png" />
     <None Include="Resources\Tools24.png" />
+    <Content Include="Startup\NugetCleanup.Command.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="XrmToolBox201512.ico" />
     <EmbeddedResource Include="Images\nologo32.png" />
     <EmbeddedResource Include="Images\nologo.png" />
@@ -672,10 +698,6 @@
     <ProjectReference Include="..\XrmToolBox.Extensibility\XrmToolBox.Extensibility.csproj">
       <Project>{df77aea3-43f7-403c-91af-3023a3bb06ec}</Project>
       <Name>XrmToolBox.Extensibility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XrmToolBox.PluginsStore\XrmToolBox.PluginsStore.csproj">
-      <Project>{ebcb3d22-03f2-40d2-b949-05cae575f2ea}</Project>
-      <Name>XrmToolBox.PluginsStore</Name>
     </ProjectReference>
     <ProjectReference Include="..\XrmToolBox.ToolLibrary\XrmToolBox.ToolLibrary.csproj">
       <Project>{626aeba8-4315-4d82-b8b9-b94200fd7589}</Project>
@@ -748,8 +770,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>Copy "$(ProjectDir)Startup\*.Command.xml" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -483,9 +483,11 @@ namespace XrmToolBox.New
                 ? availablePlugins.Where(p
                     => p.Metadata.Name.ToLower().Contains(filter.ToString().ToLower())
                     || p.Metadata.Description.ToLower().Contains(filter.ToString().ToLower())
-                    || p.Metadata.Company.ToLower().Contains(filter.ToString().ToLower()))
+                    || p.Metadata.Company.ToLower().Contains(filter.ToString().ToLower())
+                    )
                 : availablePlugins)
                 .Where(p => isc.IsPluginAllowed(p.Metadata.PluginType))
+                .Where(p => !Options.Instance.HiddenPlugins.Contains(p.Metadata.Name))
                 .OrderBy(p => p.Metadata.Name).ToList();
 
             foreach (var item in Options.Instance.MostUsedList.OrderByDescending(i => i.Count).ThenBy(i => i.Name))
@@ -848,9 +850,19 @@ namespace XrmToolBox.New
             ReloadPluginsList();
         }
 
+        private void pbClearSearch_Click(object sender, System.EventArgs e)
+        {
+            txtSearch.Text = string.Empty;
+        }
+
         private void pbOpenPluginsStore_Click(object sender, System.EventArgs e)
         {
             ActionRequested?.Invoke(this, new PluginsListEventArgs(PluginsListAction.OpenPluginsStore));
+        }
+
+        private void pbRefreshList_Click(object sender, System.EventArgs e)
+        {
+            txtSearch_TextChanged(txtSearch, new System.EventArgs());
         }
 
         private void PluginsForm2_FormClosing(object sender, FormClosingEventArgs e)
@@ -991,6 +1003,8 @@ namespace XrmToolBox.New
             searchThread?.Abort();
             searchThread = new Thread(DisplayPlugins);
             searchThread.Start(filterText);
+
+            pbClearSearch.Visible = filterText.Length > 0;
         }
 
         private async Task WaitFileIsCopied()
