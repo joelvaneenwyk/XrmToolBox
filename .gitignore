@@ -9,6 +9,7 @@
 *.user
 *.sln.docstates
 *.csproj.dtbcache.json
+.vs/
 
 # Build results
 [Dd]ebug/
