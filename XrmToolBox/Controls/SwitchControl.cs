@@ -30,7 +30,7 @@ namespace XrmToolBox.Controls
             }
         }
 
-        public bool Enabled { get; set; } = true;
+        public new bool Enabled { get; set; } = true;
 
         private void SwitchControl_Click(object sender, EventArgs e)
         {
