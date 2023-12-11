@@ -167,7 +167,7 @@ namespace XrmToolBox.New
 
                                 new Bitmap(image).Save(imagePath);
                             }
-                            catch (Exception error)
+                            catch (Exception)
                             { }
                         }
                     }
@@ -198,7 +198,7 @@ namespace XrmToolBox.New
 
                 SetCategoriesDisplay();
             }
-            catch (Exception error)
+            catch (Exception)
             {
                 pnlNavLeft.Visible = false;
             }
