@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LicenseChecker", "LicenseCh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmToolBox.ToolLibrary", "XrmToolBox.ToolLibrary\XrmToolBox.ToolLibrary.csproj", "{626AEBA8-4315-4D82-B8B9-B94200FD7589}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmToolBox.PluginsStore", "XrmToolBox.PluginsStore\XrmToolBox.PluginsStore.csproj", "{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|x86.ActiveCfg = Release|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|x86.Build.0 = Release|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Debug|x86.Build.0 = Debug|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|x86.ActiveCfg = Release|Any CPU
+		{EBCB3D22-03F2-40D2-B949-05CAE575F2EA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
