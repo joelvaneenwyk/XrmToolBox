@@ -62,69 +62,72 @@ namespace OrderedPropertyGrid
         #endregion
     }
 
-    #region Helper Class - PropertyOrderAttribute
-    [AttributeUsage(AttributeTargets.Property)]
-    public class PropertyOrderAttribute : Attribute
+    namespace Helper
     {
-        //
-        // Simple attribute to allow the order of a property to be specified
-        //
-        private int _order;
-        public PropertyOrderAttribute(int order)
-        {
-            _order = order;
-        }
-
-        public int Order
-        {
-            get
-            {
-                return _order;
-            }
-        }
-    }
-    #endregion
-
-    #region Helper Class - PropertyOrderPair
-    public class PropertyOrderPair : IComparable
-    {
-        private int _order;
-        private string _name;
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-        }
-
-        public PropertyOrderPair(string name, int order)
-        {
-            _order = order;
-            _name = name;
-        }
-
-        public int CompareTo(object obj)
+        #region Helper Class - PropertyOrderAttribute
+        [AttributeUsage(AttributeTargets.Property)]
+        public class PropertyOrderAttribute : Attribute
         {
             //
-            // Sort the pair objects by ordering by order value
-            // Equal values get the same rank
+            // Simple attribute to allow the order of a property to be specified
             //
-            int otherOrder = ((PropertyOrderPair)obj)._order;
-            if (otherOrder == _order)
+            private int _order;
+            public PropertyOrderAttribute(int order)
             {
-                //
-                // If order not specified, sort by name
-                //
-                string otherName = ((PropertyOrderPair)obj)._name;
-                return string.Compare(_name,otherName);
+                _order = order;
             }
-            else if (otherOrder > _order)
+
+            public int Order
             {
-                return -1;
+                get
+                {
+                    return _order;
+                }
             }
-            return 1;
         }
+        #endregion
+
+        #region Helper Class - PropertyOrderPair
+        public class PropertyOrderPair : IComparable
+        {
+            private int _order;
+            private string _name;
+            public string Name
+            {
+                get
+                {
+                    return _name;
+                }
+            }
+
+            public PropertyOrderPair(string name, int order)
+            {
+                _order = order;
+                _name = name;
+            }
+
+            public int CompareTo(object obj)
+            {
+                //
+                // Sort the pair objects by ordering by order value
+                // Equal values get the same rank
+                //
+                int otherOrder = ((PropertyOrderPair)obj)._order;
+                if (otherOrder == _order)
+                {
+                    //
+                    // If order not specified, sort by name
+                    //
+                    string otherName = ((PropertyOrderPair)obj)._name;
+                    return string.Compare(_name, otherName);
+                }
+                else if (otherOrder > _order)
+                {
+                    return -1;
+                }
+                return 1;
+            }
+        }
+        #endregion
     }
-    #endregion
 }
