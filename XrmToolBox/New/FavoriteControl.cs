@@ -13,7 +13,6 @@ namespace XrmToolBox.New
     {
         private readonly string base64Image;
         private readonly Favorite item;
-        private Thread clickThread;
 
         public FavoriteControl(string base64Image, Favorite item)
         {
