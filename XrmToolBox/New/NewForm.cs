@@ -38,7 +38,9 @@ namespace XrmToolBox.New
         private readonly List<PluginControlStatus> pluginControlStatuses = new List<PluginControlStatus>();
         private readonly IToolsForm pluginsForm;
         private readonly string windowTitleSuffix;
+#pragma warning disable CS0618 // Type or member is obsolete
         private AppInsights ai = new AppInsights(new AiConfig(AiEndpoint, AiKey));
+#pragma warning restore CS0618 // Type or member is obsolete
         private CrmConnectionStatusBar ccsb;
         private ConnectionManager cManager;
         private ConnectionDetail connectionDetail;

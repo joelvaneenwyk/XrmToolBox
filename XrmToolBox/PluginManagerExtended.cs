@@ -61,7 +61,9 @@ namespace XrmToolBox
         /// </summary>
         public IEnumerable<Lazy<IXrmToolBoxPlugin, IPluginMetadata>> ValidatedPlugins
         {
+#pragma warning disable CS0612 // Type or member is obsolete
             get { return Plugins?.Where(p => !ValidationErrors.ContainsKey(p.Metadata.Name)); }
+#pragma warning restore CS0612 // Type or member is obsolete
         }
 
         public IEnumerable<Lazy<IXrmToolBoxPlugin, IPluginMetadataExt>> ValidatedPluginsExt
@@ -174,7 +176,9 @@ namespace XrmToolBox
             {
                 container.ComposeParts(this);
 
+#pragma warning disable CS0612 // Type or member is obsolete
                 Manifest = ManifestLoader.CreateManifest(Plugins.ToArray(), directoryCatalog);
+#pragma warning restore CS0612 // Type or member is obsolete
                 ManifestLoader.SaveManifest(Manifest);
                 PluginsExt = ManifestLoader.LoadPlugins(Manifest);
 
@@ -229,10 +233,12 @@ namespace XrmToolBox
                 LoadParts();
             }
 
+#pragma warning disable CS0612 // Type or member is obsolete
             if (Plugins == null)
             {
                 Plugins = ManifestLoader.LoadPlugins<IPluginMetadata>(Manifest);
             }
+#pragma warning restore CS0612 // Type or member is obsolete
         }
 
         private Assembly LookupAssembly(object sender, ResolveEventArgs args)

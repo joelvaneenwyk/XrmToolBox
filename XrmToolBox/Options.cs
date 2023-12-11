@@ -132,7 +132,9 @@ namespace XrmToolBox
         {
             CheckUpdateOnStartup = true;
             IconDisplayMode = DisplayIcons.Large;
+#pragma warning disable CS0612 // Type or member is obsolete
             DisplayMostUsedFirst = false;
+#pragma warning restore CS0612 // Type or member is obsolete
             DisplayRecentlyUpdatedFirst = false;
             Size = new FormSize();
             MostUsedList = new List<PluginUseCount>();
@@ -707,6 +709,7 @@ namespace XrmToolBox
 
         public object Clone()
         {
+#pragma warning disable CS0612 // Type or member is obsolete
             return new Options
             {
                 CheckUpdateOnStartup = CheckUpdateOnStartup,
@@ -768,6 +771,7 @@ namespace XrmToolBox
                 ShowCategoriesExpanded = ShowCategoriesExpanded,
                 DoNotUseToolColors = DoNotUseToolColors
             };
+#pragma warning restore CS0612 // Type or member is obsolete
         }
 
         public void Replace(Options newOption)
