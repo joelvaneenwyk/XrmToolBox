@@ -408,7 +408,7 @@ namespace XrmToolBox.New
             }
         }
 
-        private void DisplayPlugins(object filter = null)
+        private async void DisplayPlugins(object filter = null)
         {
             Thread.Sleep(200);
 
@@ -527,7 +527,7 @@ namespace XrmToolBox.New
 
                 if (store.XrmToolBoxPlugins == null)
                 {
-                    store.LoadTools();
+                    await store.LoadTools();
                 }
 
                 var storePlugins = store.Tools;

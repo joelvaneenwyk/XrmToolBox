@@ -323,6 +323,7 @@ Would you like to reinstall last stable release of connection controls?";
 
         private async Task<bool> LoadStore()
         {
+            bool result = true;
             try
             {
                 ItSecurityChecker isc = new ItSecurityChecker();
@@ -335,16 +336,16 @@ Would you like to reinstall last stable release of connection controls?";
                 {
                     throw new Exception("Unable to connect to load tools. Please check your network settings");
                 }
-
-                return true;
             }
             catch (Exception error)
             {
                 toolTip.SetToolTip(pbToolLibraryError, error.Message);
                 pnlNoToolLibraryAccess.Visible = true;
 
-                return false;
+                result = false;
             }
+
+            return await Task.Run(() => result);
         }
 
         private void NewForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -996,7 +997,7 @@ Would you like to reinstall last stable release of connection controls?";
             }
         }
 
-        private async void PluginsForm_OpenPluginRequested(object sender, PluginEventArgs e)
+        private void PluginsForm_OpenPluginRequested(object sender, PluginEventArgs e)
         {
             if (store != null && store.PluginsCount > 0)
             {
@@ -1922,7 +1923,7 @@ Would you like to reinstall last stable release of connection controls?";
             }
         }
 
-        private async void tsddbTools_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void tsddbTools_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             if (e.ClickedItem == pluginsStoreToolStripMenuItem)
             {
