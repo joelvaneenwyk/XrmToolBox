@@ -1,0 +1,4 @@
+[submodule "FetchXmlBuilder"]
+	path = Plugins/FetchXmlBuilder
+	url = git@github.com:joelvaneenwyk/xrm-fetch-xml-builder.git
+	branch = main
