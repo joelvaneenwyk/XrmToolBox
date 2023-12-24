@@ -1,17 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XrmToolBox</RootNamespace>
-    <AssemblyName>XrmToolBox</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -38,178 +28,50 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>XrmToolBox201512.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
     <StartupObject>XrmToolBox.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without Gembox|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug Without Gembox\</OutputPath>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Without Gembox|Win32'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Win32\Debug Without Gembox\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="McTools.StopAdvertisement">
       <HintPath>..\LicenseChecker\McTools.StopAdvertisement.dll</HintPath>
     </Reference>
-    <Reference Include="McTools.Xrm.Connection, Version=1.2023.6.56, Culture=neutral, PublicKeyToken=96037217801d9658, processorArchitecture=MSIL">
-      <HintPath>..\packages\MscrmTools.Xrm.Connection.1.2023.6.56\lib\net462\McTools.Xrm.Connection.dll</HintPath>
-    </Reference>
-    <Reference Include="McTools.Xrm.Connection.WinForms, Version=1.2023.6.56, Culture=neutral, PublicKeyToken=f1559f79cf894e27, processorArchitecture=MSIL">
-      <HintPath>..\packages\MscrmTools.Xrm.Connection.1.2023.6.56\lib\net462\McTools.Xrm.Connection.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.49\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
-    </Reference>
-    <Reference Include="microsoft.identitymodel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.IdentityModel.7.0.0\lib\net35\microsoft.identitymodel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.5.3.0\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.9.1.1.32\lib\net462\Microsoft.Rest.ClientRuntime.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1518.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1518.46\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1518.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1518.46\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1518.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1518.46\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.XmlTransform, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.Xdt.3.1.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.49\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Sdk.Deployment, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CrmSdk.Deployment.9.0.2.34\lib\net462\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Sdk.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CrmSdk.Workflow.9.0.2.49\lib\net462\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Tooling.Connector, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.9.1.1.32\lib\net462\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Tooling.CrmConnectControl, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.WpfControls.9.1.1.32\lib\net462\Microsoft.Xrm.Tooling.CrmConnectControl.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Tooling.Ui.Styles, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.WpfControls.9.1.1.32\lib\net462\Microsoft.Xrm.Tooling.Ui.Styles.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Tooling.WebResourceUtility, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.WpfControls.9.1.1.32\lib\net462\Microsoft.Xrm.Tooling.WebResourceUtility.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\jacobslusser.ScintillaNET.3.6.3\lib\net40\ScintillaNET.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Activities.Presentation" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data.Services" />
     <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Design" />
-    <Reference Include="System.DirectoryServices" />
-    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.IdentityModel" />
-    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.IO.Compression" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net" />
-    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-    </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Activation" />
     <Reference Include="System.ServiceModel.Web" />
-    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Json, Version=7.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Json.7.0.1\lib\net462\System.Text.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
@@ -217,568 +79,74 @@
     <Reference Include="System.Workflow.Activities" />
     <Reference Include="System.Workflow.ComponentModel" />
     <Reference Include="System.Workflow.Runtime" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Serialization" />
-    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
-      <HintPath>..\packages\DockPanelSuite.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
-    </Reference>
-    <Reference Include="WeifenLuo.WinFormsUI.Docking.ThemeVS2015, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
-      <HintPath>..\packages\DockPanelSuite.ThemeVS2015.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll</HintPath>
-    </Reference>
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Announcement\AnnouncementDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Announcement\AnnouncementDialog.Designer.cs">
-      <DependentUpon>AnnouncementDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Announcement\AnnouncementManager.cs" />
-    <Compile Include="Announcement\AnnouncementSettings.cs" />
-    <Compile Include="AppCode\AppInsights\AppInsights.cs" />
-    <Compile Include="AppCode\AppInsights\InstallationInfo.cs" />
-    <Compile Include="AppCode\DockExtensions.cs" />
-    <Compile Include="AppCode\Extensions.cs" />
-    <Compile Include="AppCode\IToolsForm.cs" />
-    <Compile Include="AppCode\ListViewItemComparer.cs" />
-    <Compile Include="AppCode\Favorites.cs" />
-    <Compile Include="AppCode\MostRecentlyUsedItems.cs" />
-    <Compile Include="AppCode\PluginControlStatus.cs" />
-    <Compile Include="AppCode\PluginUpdates.cs" />
-    <Compile Include="AppCode\PluginUpdateSkip.cs" />
-    <Compile Include="AppCode\PropertySorter.cs" />
-    <Compile Include="AppCode\RegistryHelper.cs" />
-    <Compile Include="AppCode\ReleasesDTO.cs" />
-    <Compile Include="AppCode\SettingsPropertyEventArgs.cs" />
-    <Compile Include="AppCode\SettingsPropertyInfo.cs" />
-    <Compile Include="AppCode\WebProxyHelper.cs" />
-    <Compile Include="ConnectionParameterInfo.cs" />
-    <Compile Include="Controls\AdvancedControl.cs">
+    <Compile Update="Controls\AdvancedControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\AdvancedControl.designer.cs">
-      <DependentUpon>AdvancedControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ApplicationProtocolControl.cs">
+    <Compile Update="Controls\ApplicationProtocolControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ApplicationProtocolControl.Designer.cs">
-      <DependentUpon>ApplicationProtocolControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\HiddenToolsControl.cs">
+    <Compile Update="Controls\HiddenToolsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\HiddenToolsControl.Designer.cs">
-      <DependentUpon>HiddenToolsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\AssembliesControl.cs">
+    <Compile Update="Controls\AssembliesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\AssembliesControl.Designer.cs">
-      <DependentUpon>AssembliesControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ConnectingCdsControl.cs">
+    <Compile Update="Controls\ConnectingCdsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ConnectingCdsControl.designer.cs">
-      <DependentUpon>ConnectingCdsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ConnectingControl.cs">
+    <Compile Update="Controls\ConnectingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ConnectingControl.Designer.cs">
-      <DependentUpon>ConnectingControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\CreditsControl.cs">
+    <Compile Update="Controls\CreditsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\CreditsControl.Designer.cs">
-      <DependentUpon>CreditsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\DropdownSettingsControl.cs">
+    <Compile Update="Controls\DropdownSettingsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\DropdownSettingsControl.designer.cs">
-      <DependentUpon>DropdownSettingsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\HighlightItem.cs">
+    <Compile Update="Controls\HighlightItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\HighlightItem.Designer.cs">
-      <DependentUpon>HighlightItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ISettingsControl.cs" />
-    <Compile Include="Controls\NavLeftItem.cs">
+    <Compile Update="Controls\NavLeftItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\NavLeftItem.designer.cs">
-      <DependentUpon>NavLeftItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\PathsControl.cs">
+    <Compile Update="Controls\PathsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\PathsControl.Designer.cs">
-      <DependentUpon>PathsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ProxyControl.cs">
+    <Compile Update="Controls\ProxyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ProxyControl.Designer.cs">
-      <DependentUpon>ProxyControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\SwitchControl.cs">
+    <Compile Update="Controls\SwitchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\SwitchControl.designer.cs">
-      <DependentUpon>SwitchControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\SwitchSettingsControl.cs">
+    <Compile Update="Controls\SwitchSettingsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\SwitchSettingsControl.designer.cs">
-      <DependentUpon>SwitchSettingsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\TextBoxSettingsControl.cs">
+    <Compile Update="Controls\TextBoxSettingsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TextBoxSettingsControl.designer.cs">
-      <DependentUpon>TextBoxSettingsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\TextBoxWithPlaceholder.cs">
+    <Compile Update="Controls\TextBoxWithPlaceholder.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\DonationIntroForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DonationIntroForm.Designer.cs">
-      <DependentUpon>DonationIntroForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SettingsForm.designer.cs">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\HiddenPluginsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\HiddenPluginsDialog.Designer.cs">
-      <DependentUpon>HiddenPluginsDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\NewConnectionVersion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\NewConnectionVersion.Designer.cs">
-      <DependentUpon>NewConnectionVersion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\NewPluginVersion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\NewPluginVersion.Designer.cs">
-      <DependentUpon>NewPluginVersion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\NewVersionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\NewVersionForm.Designer.cs">
-      <DependentUpon>NewVersionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SuccessDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SuccessDialog.designer.cs">
-      <DependentUpon>SuccessDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UserSelectionDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UserSelectionDialog.Designer.cs">
-      <DependentUpon>UserSelectionDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\WelcomeDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\WelcomeDialog.Designer.cs">
-      <DependentUpon>WelcomeDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CrmExceptionHelper.cs" />
-    <Compile Include="Forms\OptionsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\OptionsDialog.Designer.cs">
-      <DependentUpon>OptionsDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\CustomFloatWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New\EventArgs\OpenFavoritePluginEventArgs.cs" />
-    <Compile Include="New\FavoriteControl.cs">
+    <Compile Update="New\FavoriteControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="New\FavoriteControl.Designer.cs">
-      <DependentUpon>FavoriteControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\PluginsForm2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New\PluginsForm2.designer.cs">
-      <DependentUpon>PluginsForm2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\ToolInfo.cs" />
-    <Compile Include="Options.cs" />
-    <Compile Include="PluginManagerExtended.cs" />
-    <Compile Include="PluginUseCount.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\TabConnectionUpdater.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TabConnectionUpdater.Designer.cs">
-      <DependentUpon>TabConnectionUpdater.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="New\EventArgs\OpenMruPluginEventArgs.cs" />
-    <Compile Include="New\EventArgs\OpenPluginEventArgs.cs" />
-    <Compile Include="New\EventArgs\PluginEventArgs.cs" />
-    <Compile Include="New\EventArgs\PluginsListEventArgs.cs" />
-    <Compile Include="New\InvalidPluginsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New\InvalidPluginsForm.Designer.cs">
-      <DependentUpon>InvalidPluginsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\MostRecentlyUsedItemControl.cs">
+    <Compile Update="New\MostRecentlyUsedItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="New\MostRecentlyUsedItemControl.Designer.cs">
-      <DependentUpon>MostRecentlyUsedItemControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\NewForm.Community.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New\NewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New\NewForm.Designer.cs">
-      <DependentUpon>NewForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\NewVersionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New\NewVersionForm.Designer.cs">
-      <DependentUpon>NewVersionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\PluginForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New\PluginForm.Designer.cs">
-      <DependentUpon>PluginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\InvalidPluginsInfo.cs">
+    <Compile Update="New\InvalidPluginsInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="New\InvalidPluginsInfo.Designer.cs">
-      <DependentUpon>InvalidPluginsInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\PluginsFilterInfo.cs">
+    <Compile Update="New\PluginsFilterInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="New\PluginsFilterInfo.Designer.cs">
-      <DependentUpon>PluginsFilterInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\PluginsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New\PluginsForm.Designer.cs">
-      <DependentUpon>PluginsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New\StartPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New\StartPage.Designer.cs">
-      <DependentUpon>StartPage.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Announcement\AnnouncementDialog.resx">
-      <DependentUpon>AnnouncementDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AdvancedControl.resx">
-      <DependentUpon>AdvancedControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ApplicationProtocolControl.resx">
-      <DependentUpon>ApplicationProtocolControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\HiddenToolsControl.resx">
-      <DependentUpon>HiddenToolsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\AssembliesControl.resx">
-      <DependentUpon>AssembliesControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ConnectingCdsControl.resx">
-      <DependentUpon>ConnectingCdsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ConnectingControl.resx">
-      <DependentUpon>ConnectingControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CreditsControl.resx">
-      <DependentUpon>CreditsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\DropdownSettingsControl.resx">
-      <DependentUpon>DropdownSettingsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\HighlightItem.resx">
-      <DependentUpon>HighlightItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\NavLeftItem.resx">
-      <DependentUpon>NavLeftItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\PathsControl.resx">
-      <DependentUpon>PathsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ProxyControl.resx">
-      <DependentUpon>ProxyControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SwitchControl.resx">
-      <DependentUpon>SwitchControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\SwitchSettingsControl.resx">
-      <DependentUpon>SwitchSettingsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TextBoxSettingsControl.resx">
-      <DependentUpon>TextBoxSettingsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DonationIntroForm.resx">
-      <DependentUpon>DonationIntroForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SettingsForm.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HiddenPluginsDialog.resx">
-      <DependentUpon>HiddenPluginsDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewConnectionVersion.resx">
-      <DependentUpon>NewConnectionVersion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewPluginVersion.resx">
-      <DependentUpon>NewPluginVersion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewVersionForm.resx">
-      <DependentUpon>NewVersionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OptionsDialog.resx">
-      <DependentUpon>OptionsDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SuccessDialog.resx">
-      <DependentUpon>SuccessDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserSelectionDialog.resx">
-      <DependentUpon>UserSelectionDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WelcomeDialog.resx">
-      <DependentUpon>WelcomeDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\FavoriteControl.resx">
-      <DependentUpon>FavoriteControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\PluginsForm2.resx">
-      <DependentUpon>PluginsForm2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TabConnectionUpdater.resx">
-      <DependentUpon>TabConnectionUpdater.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\InvalidPluginsForm.resx">
-      <DependentUpon>InvalidPluginsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\MostRecentlyUsedItemControl.resx">
-      <DependentUpon>MostRecentlyUsedItemControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\NewForm.resx">
-      <DependentUpon>NewForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\NewVersionForm.resx">
-      <DependentUpon>NewVersionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\PluginForm.resx">
-      <DependentUpon>PluginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\InvalidPluginsInfo.resx">
-      <DependentUpon>InvalidPluginsInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\PluginsFilterInfo.resx">
-      <DependentUpon>PluginsFilterInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\PluginsForm.resx">
-      <DependentUpon>PluginsForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New\StartPage.resx">
-      <DependentUpon>StartPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <!--<Content Include="bin\Debug\Connections\ConnectionsList.Default.xml" />
-    <Content Include="bin\Debug\Connections\MscrmTools.ConnectionsList.xml" />
-    <Content Include="bin\Debug\McTools.Xrm.Connection.dll" />
-    <Content Include="bin\Debug\McTools.Xrm.Connection.WinForms.dll" />
-    <Content Include="bin\Debug\Microsoft.Crm.Sdk.Proxy.dll" />
-    <Content Include="bin\Debug\Microsoft.Crm.Sdk.Proxy.xml" />
-    <Content Include="bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
-    <Content Include="bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll" />
-    <Content Include="bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml" />
-    <Content Include="bin\Debug\Microsoft.IdentityModel.dll" />
-    <Content Include="bin\Debug\Microsoft.Rest.ClientRuntime.dll" />
-    <Content Include="bin\Debug\Microsoft.Web.XmlTransform.dll" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.dll" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Sdk.xml" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.Connector.dll" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.Connector.xml" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.CrmConnectControl.dll" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.CrmConnectControl.xml" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.Ui.Styles.dll" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.WebResourceUtility.dll" />
-    <Content Include="bin\Debug\Microsoft.Xrm.Tooling.WebResourceUtility.xml" />
-    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
-    <Content Include="bin\Debug\Newtonsoft.Json.pdb" />
-    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
-    <Content Include="bin\Debug\NuGet.Core.dll" />
-    <Content Include="bin\Debug\Plugins\MsCrmTools.SampleTool.dll" />
-    <Content Include="bin\Debug\Settings\XrmToolBox.Announcements.xml" />
-    <Content Include="bin\Debug\Settings\XrmToolBox.PluginsStore.xml" />
-    <Content Include="bin\Debug\Settings\XrmToolBox.Settings.xml" />
-    <Content Include="bin\Debug\WeifenLuo.WinFormsUI.Docking.dll" />
-    <Content Include="bin\Debug\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll" />
-    <Content Include="bin\Debug\XrmToolBox.AutoUpdater.exe" />
-    <Content Include="bin\Debug\XrmToolBox.exe" />
-    <Content Include="bin\Debug\XrmToolBox.Extensibility.dll" />
-    <Content Include="bin\Debug\XrmToolBox.Extensibility.pdb" />
-    <Content Include="bin\Debug\XrmToolBox.pdb" />
-    <Content Include="bin\Debug\XrmToolBox.PluginsStore.dll" />
-    <Content Include="bin\Debug\XrmToolBox.PluginsStore.pdb" />-->
     <Content Include="favicon3Fr.ico" />
-    <None Include="packages.config" />
-    <None Include="Resources\logo_0032.png" />
-    <None Include="Resources\twitter.png" />
-    <None Include="Resources\Gitter32.png" />
-    <None Include="Resources\paypal.png" />
-    <None Include="Resources\close.png" />
-    <None Include="Resources\Clear_16.png" />
-    <None Include="Resources\logo_0016.png" />
-    <None Include="Resources\PluginsStore64.png" />
-    <None Include="Resources\OpenToolsLibrary.png" />
-    <None Include="Resources\LogoDyn365.png" />
-    <None Include="Resources\powerapps16.png" />
-    <None Include="Resources\logo_0400.png" />
-    <None Include="Resources\mask.png" />
-    <None Include="Resources\money_dollar.png" />
-    <None Include="Resources\money_euro.png" />
-    <None Include="Resources\money_pound.png" />
-    <None Include="Resources\Dataverse_16x16.png" />
-    <None Include="Resources\ConnectingDataverse.gif" />
-    <None Include="Resources\3.png" />
-    <None Include="Resources\lightning.png" />
-    <None Include="Resources\hide_detail.png" />
-    <None Include="Resources\star.png" />
-    <None Include="Resources\shortcut.png" />
-    <None Include="Resources\loading_dv4.png" />
-    <None Include="Resources\loading_dv0.png" />
-    <None Include="Resources\loading_dv1.png" />
-    <None Include="Resources\loading_dv2.png" />
-    <None Include="Resources\loading_dv3.png" />
-    <None Include="Resources\Connect32.png" />
-    <None Include="Resources\Connect16.png" />
-    <None Include="Resources\close1.png" />
-    <None Include="Resources\PowerApps_scalable.png" />
-    <None Include="Resources\ApplicationProtocol32.png" />
-    <None Include="Resources\Assemblies32.png" />
-    <None Include="Resources\CloseBehavior32.png" />
-    <None Include="Resources\Comparison32.png" />
-    <None Include="Resources\Configuration32.png" />
-    <None Include="Resources\Connect24.png" />
-    <None Include="Resources\CheckForUpdate24.png" />
     <Content Include="Resources\ConnectingDynamics.gif" />
-    <None Include="Resources\LoadingConnection.gif" />
-    <None Include="Resources\ConnectionControls32.png" />
-    <None Include="Resources\Connections32.png" />
-    <None Include="Resources\Credits32.png" />
-    <None Include="Resources\DataCollect32.png" />
-    <None Include="Resources\Display32.png" />
-    <None Include="Resources\off-button.png" />
-    <None Include="Resources\on-button.png" />
-    <None Include="Resources\Paths32.png" />
-    <None Include="Resources\PluginsStore32.png" />
-    <None Include="Resources\ProxySettings32.png" />
-    <None Include="Resources\server.png" />
-    <None Include="Resources\Session32.png" />
-    <None Include="Resources\Settings32.png" />
-    <None Include="Resources\StartPage32.png" />
-    <None Include="Resources\Startup32.png" />
-    <None Include="Resources\Migration32.png" />
-    <None Include="Resources\New32.png" />
-    <None Include="Resources\Plugins32.png" />
-    <None Include="Resources\PowerBI32.png" />
-    <None Include="Resources\PowerPages32.png" />
-    <None Include="Resources\Processes32.png" />
-    <None Include="Resources\Reporting32.png" />
-    <None Include="Resources\right-arrow.png" />
-    <None Include="Resources\Security32.png" />
-    <None Include="Resources\Shrink32.png" />
-    <None Include="Resources\Solutions32.png" />
-    <None Include="Resources\Customizations32.png" />
-    <None Include="Resources\Data32.png" />
-    <None Include="Resources\Development32.png" />
-    <None Include="Resources\Documentation32.png" />
-    <None Include="Resources\Expand32.png" />
-    <None Include="Resources\left-arrow.png" />
-    <None Include="Resources\Favorite24.png" />
-    <None Include="Resources\Hide24.png" />
-    <None Include="Resources\Shortcut24.png" />
-    <None Include="Resources\Dollar24.png" />
-    <None Include="Resources\Euro24.png" />
-    <None Include="Resources\Help24.png" />
-    <None Include="Resources\ManageConnections24.png" />
-    <None Include="Resources\Settings24.png" />
-    <None Include="Resources\Impersonate24.png" />
-    <None Include="Resources\Pound24.png" />
-    <None Include="Resources\Dataverse24.png" />
-    <None Include="Resources\PowerApps24.png" />
-    <None Include="Resources\Dynamics365_24.png" />
-    <None Include="Resources\Hide32.png" />
-    <None Include="Resources\Eraser24.png" />
-    <None Include="Resources\Refresh24.png" />
     <Content Include="Resources\three_tags.png" />
-    <None Include="Resources\www_page.png" />
-    <None Include="Resources\ToolsListDisplay32.png" />
-    <None Include="Resources\Troubleshooting32.png" />
-    <None Include="Resources\UserInterface32.png" />
-    <None Include="Resources\Uninstall24.png" />
-    <None Include="Resources\Web24.png" />
-    <None Include="Resources\Tools24.png" />
     <Content Include="Startup\NugetCleanup.Command.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -788,18 +156,9 @@
     <EmbeddedResource Include="Images\progress.gif" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XrmToolBox.AutoUpdater\XrmToolBox.AutoUpdater.csproj">
-      <Project>{564c72c8-586e-4218-b6b3-f464f7c3903a}</Project>
-      <Name>XrmToolBox.AutoUpdater</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XrmToolBox.Extensibility\XrmToolBox.Extensibility.csproj">
-      <Project>{df77aea3-43f7-403c-91af-3023a3bb06ec}</Project>
-      <Name>XrmToolBox.Extensibility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XrmToolBox.ToolLibrary\XrmToolBox.ToolLibrary.csproj">
-      <Project>{626aeba8-4315-4d82-b8b9-b94200fd7589}</Project>
-      <Name>XrmToolBox.ToolLibrary</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\XrmToolBox.AutoUpdater\XrmToolBox.AutoUpdater.csproj" />
+    <ProjectReference Include="..\XrmToolBox.Extensibility\XrmToolBox.Extensibility.csproj" />
+    <ProjectReference Include="..\XrmToolBox.ToolLibrary\XrmToolBox.ToolLibrary.csproj" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -823,7 +182,67 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <PackageReference Include="DockPanelSuite" Version="3.1.0" />
+    <PackageReference Include="DockPanelSuite.ThemeVS2015" Version="3.1.0" />
+    <PackageReference Include="jacobslusser.ScintillaNET" Version="3.6.3" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.51" />
+    <PackageReference Include="Microsoft.CrmSdk.Deployment" Version="9.0.2.34" />
+    <PackageReference Include="Microsoft.CrmSdk.Workflow" Version="9.0.2.51" />
+    <PackageReference Include="Microsoft.CrmSdk.XrmTooling.CoreAssembly" Version="9.1.1.45" />
+    <PackageReference Include="Microsoft.CrmSdk.XrmTooling.WpfControls" Version="9.1.1.45" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.58.1" />
+    <PackageReference Include="Microsoft.IdentityModel" Version="7.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Abstractions" Version="7.0.3" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.3.0" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="8.0.0-preview.7.23375.6" />
+    <PackageReference Include="Microsoft.NETCore.Targets" Version="6.0.0-preview.4.21253.7" />
+    <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.24" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2210.55" />
+    <PackageReference Include="Microsoft.Web.Xdt" Version="7.0.0-preview.22423.2" />
+    <PackageReference Include="MscrmTools.Xrm.Connection" Version="1.2023.6.56" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Buffers" Version="4.5.1" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="8.0.0" />
+    <PackageReference Include="System.DirectoryServices" Version="8.0.0" />
+    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="8.0.0" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+    <PackageReference Include="System.Private.Uri" Version="4.3.2" />
+    <PackageReference Include="System.Runtime" Version="4.3.1" />
+    <PackageReference Include="System.Runtime.Caching" Version="8.0.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    <PackageReference Include="System.Security.Cryptography.Encoding" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.2" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="AbstractControlDescriptionProvider.cs" />
+    <Compile Remove="AppInsights\AppInsights.cs" />
+    <Compile Remove="InformationPanel.cs" />
+    <Compile Remove="PluginsListForm.cs" />
+    <Compile Remove="PluginsListForm.Designer.cs" />
+    <Compile Remove="Properties\Settings.Designer.cs" />
+    <Compile Remove="UserControls\LargePluginModel.cs" />
+    <Compile Remove="UserControls\LargePluginModel.Designer.cs" />
+    <Compile Remove="UserControls\PluginModel.cs" />
+    <Compile Remove="UserControls\SmallPluginLabel.cs" />
+    <Compile Remove="UserControls\SmallPluginModel.cs" />
+    <Compile Remove="UserControls\SmallPluginModel.Designer.cs" />
+    <EmbeddedResource Remove="PluginsListForm.resx" />
+    <EmbeddedResource Remove="UserControls\LargePluginModel.resx" />
+    <EmbeddedResource Remove="UserControls\SmallPluginModel.resx" />
+  </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
       <UserProperties BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="None.YearStamp.MonthStamp.DayStamp" BuildVersion_ConfigurationName="Release" />
@@ -832,18 +251,4 @@
   <PropertyGroup>
     <PostBuildEvent>Copy "$(ProjectDir)Startup\*.Command.xml" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
-  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1518.46\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1518.46\build\Microsoft.Web.WebView2.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1518.46\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1518.46\build\Microsoft.Web.WebView2.targets'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
