@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using XrmToolBox.Extensibility.Interfaces;
+using Newtonsoft.Json;
 
 namespace XrmToolBox.Extensibility.Manifest
 {
