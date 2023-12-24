@@ -38,7 +38,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MarkMpn.FetchXmlToWebAPI", 
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FXBEditorUtils", "Plugins\FetchXmlBuilder\FXBEditorUtils\FXBEditorUtils.shproj", "{FAF35E13-1A84-45B3-A315-C62D15AC888A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FetchXmlBuilder", "Plugins\FetchXmlBuilder\FetchXmlBuilder\FetchXmlBuilder.csproj", "{D746CBE7-7787-47FC-B773-F089A44DF8C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FetchXmlBuilder", "Plugins\FetchXmlBuilder\FetchXmlBuilder\FetchXmlBuilder.csproj", "{D746CBE7-7787-47FC-B773-F089A44DF8C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,8 +101,8 @@ Global
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		BuildVersion_ConfigurationName = Release
 		SolutionGuid = {5CC3AFE2-F092-40F3-A540-539389A045B6}
+		BuildVersion_ConfigurationName = Release
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XTB.Helpers\Rappen.XTB.Helpers.projitems*{0b88b381-ee9d-41e8-a62c-90152c42de90}*SharedItemsImports = 13
@@ -112,13 +112,14 @@ Global
 		Plugins\FetchXmlBuilder\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser.Shared.projitems*{9c6aadaa-cf44-4bce-90c7-79e6c6ef6dec}*SharedItemsImports = 13
 		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Tokens\Rappen.XRM.Tokens.projitems*{b721386d-0fdf-415f-975e-a4f8d60cd962}*SharedItemsImports = 13
 		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete.projitems*{ce3b0f1b-1668-4ac3-a7ad-fe1872c6bcc3}*SharedItemsImports = 13
-		Plugins\FetchXmlBuilder\FXBEditorUtils\FXBEditorUtils.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
-		Plugins\FetchXmlBuilder\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
-		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutocomplete.Scintilla\MarkMpn.XmlSchemaAutocomplete.Scintilla.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
-		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
-		Plugins\FetchXmlBuilder\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser.Shared.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
-		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Helpers\Rappen.XRM.Helpers.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
-		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XTB.Helpers\Rappen.XTB.Helpers.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 4
+		Plugins\FetchXmlBuilder\FXBEditorUtils\FXBEditorUtils.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutocomplete.Scintilla\MarkMpn.XmlSchemaAutocomplete.Scintilla.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser.Shared.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Helpers\Rappen.XRM.Helpers.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Tokens\Rappen.XRM.Tokens.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XTB.Helpers\Rappen.XTB.Helpers.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
 		Plugins\FetchXmlBuilder\FXBEditorUtils\FXBEditorUtils.projitems*{faf35e13-1a84-45b3-a315-c62d15ac888a}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
