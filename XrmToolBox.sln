@@ -43,6 +43,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FXBEditorUtils", "Plugins\F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FetchXmlBuilder", "Plugins\FetchXmlBuilder\FetchXmlBuilder\FetchXmlBuilder.csproj", "{D746CBE7-7787-47FC-B773-F089A44DF8C9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkMpn.FetchXmlToWebAPI.Tests", "Plugins\FetchXmlBuilder\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.Tests\MarkMpn.FetchXmlToWebAPI.Tests.csproj", "{B1426DF1-9233-43F7-AED4-131DD5E6696E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Without Gembox|Any CPU = Debug Without Gembox|Any CPU
@@ -86,6 +88,12 @@ Global
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Debug Without Gembox|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Debug Without Gembox|Any CPU.Build.0 = Debug|Any CPU
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +110,7 @@ Global
 		{543E6D79-2913-4B00-AAAC-5661F6ADB1A5} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
 		{FAF35E13-1A84-45B3-A315-C62D15AC888A} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		BuildVersion_ConfigurationName = Release
@@ -113,6 +122,7 @@ Global
 		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutocomplete.Scintilla\MarkMpn.XmlSchemaAutocomplete.Scintilla.projitems*{4c497b9c-b9dd-4b3d-8ecc-c504afcadd65}*SharedItemsImports = 13
 		Plugins\FetchXmlBuilder\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.projitems*{543e6d79-2913-4b00-aaac-5661f6adb1a5}*SharedItemsImports = 13
 		Plugins\FetchXmlBuilder\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser.Shared.projitems*{9c6aadaa-cf44-4bce-90c7-79e6c6ef6dec}*SharedItemsImports = 13
+		Plugins\FetchXmlBuilder\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.projitems*{b1426df1-9233-43f7-aed4-131dd5e6696e}*SharedItemsImports = 5
 		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Tokens\Rappen.XRM.Tokens.projitems*{b721386d-0fdf-415f-975e-a4f8d60cd962}*SharedItemsImports = 13
 		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete.projitems*{ce3b0f1b-1668-4ac3-a7ad-fe1872c6bcc3}*SharedItemsImports = 13
 		Plugins\FetchXmlBuilder\FXBEditorUtils\FXBEditorUtils.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
