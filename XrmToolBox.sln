@@ -3,22 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmToolBox", "XrmToolBox\XrmToolBox.csproj", "{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XrmToolBox", "XrmToolBox\XrmToolBox.csproj", "{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D746CBE7-7787-47FC-B773-F089A44DF8C9} = {D746CBE7-7787-47FC-B773-F089A44DF8C9}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{1A7814D2-1185-484E-92CC-7DD71DDE6488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsCrmTools.SampleTool", "Plugins\MsCrmTools.SampleTool\MsCrmTools.SampleTool.csproj", "{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsCrmTools.SampleTool", "Plugins\MsCrmTools.SampleTool\MsCrmTools.SampleTool.csproj", "{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmToolBox.Extensibility", "XrmToolBox.Extensibility\XrmToolBox.Extensibility.csproj", "{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XrmToolBox.Extensibility", "XrmToolBox.Extensibility\XrmToolBox.Extensibility.csproj", "{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmToolBox.AutoUpdater", "XrmToolBox.AutoUpdater\XrmToolBox.AutoUpdater.csproj", "{564C72C8-586E-4218-B6B3-F464F7C3903A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XrmToolBox.AutoUpdater", "XrmToolBox.AutoUpdater\XrmToolBox.AutoUpdater.csproj", "{564C72C8-586E-4218-B6B3-F464F7C3903A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LicenseChecker", "LicenseChecker", "{08305693-A5D7-41FA-B476-20874647809B}"
 	ProjectSection(SolutionItems) = preProject
 		LicenseChecker\McTools.StopAdvertisement.dll = LicenseChecker\McTools.StopAdvertisement.dll
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmToolBox.ToolLibrary", "XrmToolBox.ToolLibrary\XrmToolBox.ToolLibrary.csproj", "{626AEBA8-4315-4D82-B8B9-B94200FD7589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XrmToolBox.ToolLibrary", "XrmToolBox.ToolLibrary\XrmToolBox.ToolLibrary.csproj", "{626AEBA8-4315-4D82-B8B9-B94200FD7589}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Rappen.XRM.Helpers", "Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Helpers\Rappen.XRM.Helpers.shproj", "{2EBF1257-150F-46C8-8BBD-2A9235C0EB45}"
 EndProject
@@ -101,8 +104,8 @@ Global
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5CC3AFE2-F092-40F3-A540-539389A045B6}
 		BuildVersion_ConfigurationName = Release
+		SolutionGuid = {5CC3AFE2-F092-40F3-A540-539389A045B6}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XTB.Helpers\Rappen.XTB.Helpers.projitems*{0b88b381-ee9d-41e8-a62c-90152c42de90}*SharedItemsImports = 13
