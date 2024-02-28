@@ -1,7 +1,12 @@
-# Created by https://www.gitignore.io
+#
+# Ignore file for Xrm Toolbox
+#
+# Initially created with https://www.gitignore.io
+#
 
 .sarif/
 .gdn/
+.build/
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
