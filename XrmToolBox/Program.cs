@@ -457,7 +457,7 @@ Please start XrmToolBox again to fix this problem",
                                         }
                                     }
                                 }
-                                catch (Exception error)
+                                catch (Exception)
                                 {
                                 }
                                 finally
@@ -482,7 +482,7 @@ Please start XrmToolBox again to fix this problem",
                     doc.Save(file);
                 }
             }
-            catch (Exception error)
+            catch (Exception)
             {
                 // Do nothing if something went wrong here
             }

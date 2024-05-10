@@ -192,37 +192,36 @@ namespace XrmToolBox.New
                 pnlHighlight.Visible = true;
                 lblEnvInfo.Visible = false;
                 Padding = new Padding(0, 0, 0, 0);
-                return;
 
-                BackColor = detail.EnvironmentHighlightingInfo?.Color ?? DefaultBackColor;
-                lblEnvInfo.ForeColor = detail.EnvironmentHighlightingInfo?.TextColor ?? DefaultForeColor;
-                lblEnvInfo.Text = detail.EnvironmentHighlightingInfo?.Text ?? "";
-                lblEnvInfo.Visible = true;
-                Padding = new Padding(10, 0, 10, 10);
-
-                lblEnvInfo.Visible = false;
-
-                lblEnvName.ForeColor = detail.EnvironmentHighlightingInfo?.TextColor ?? DefaultForeColor;
-                lblEnvName.Text = ($"{detail.EnvironmentHighlightingInfo?.Text ?? ""}{(detail.EnvironmentHighlightingInfo != null ? " - " : "")}{detail.ConnectionName}");
-
-                if (detail.ParentConnectionFile != null)
-                {
-                    byte[] bytes = Convert.FromBase64String(detail.ParentConnectionFile.Base64Image);
-
-                    using (MemoryStream ms = new MemoryStream(bytes))
-                    {
-                        pbEnvLogo.Image = Image.FromStream(ms);
-                    }
-                }
-                else
-                {
-                    pbEnvLogo.Visible = false;
-                }
-                pbEnvLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-                pbEnvLogo.Size = new Size(pnlHighlight.Height, pnlHighlight.Height);
-                pnlHighlight.BackColor = detail.EnvironmentHighlightingInfo?.Color ?? DefaultBackColor;
-                pnlHighlight.Visible = true;
-                Padding = new Padding(0, 0, 0, 0);
+                // BackColor = detail.EnvironmentHighlightingInfo?.Color ?? DefaultBackColor;
+                // lblEnvInfo.ForeColor = detail.EnvironmentHighlightingInfo?.TextColor ?? DefaultForeColor;
+                // lblEnvInfo.Text = detail.EnvironmentHighlightingInfo?.Text ?? "";
+                // lblEnvInfo.Visible = true;
+                // Padding = new Padding(10, 0, 10, 10);
+                // 
+                // lblEnvInfo.Visible = false;
+                // 
+                // lblEnvName.ForeColor = detail.EnvironmentHighlightingInfo?.TextColor ?? DefaultForeColor;
+                // lblEnvName.Text = ($"{detail.EnvironmentHighlightingInfo?.Text ?? ""}{(detail.EnvironmentHighlightingInfo != null ? " - " : "")}{detail.ConnectionName}");
+                // 
+                // if (detail.ParentConnectionFile != null)
+                // {
+                //     byte[] bytes = Convert.FromBase64String(detail.ParentConnectionFile.Base64Image);
+                // 
+                //     using (MemoryStream ms = new MemoryStream(bytes))
+                //     {
+                //         pbEnvLogo.Image = Image.FromStream(ms);
+                //     }
+                // }
+                // else
+                // {
+                //     pbEnvLogo.Visible = false;
+                // }
+                // pbEnvLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+                // pbEnvLogo.Size = new Size(pnlHighlight.Height, pnlHighlight.Height);
+                // pnlHighlight.BackColor = detail.EnvironmentHighlightingInfo?.Color ?? DefaultBackColor;
+                // pnlHighlight.Visible = true;
+                // Padding = new Padding(0, 0, 0, 0);
             }
             else
             {
@@ -261,58 +260,56 @@ namespace XrmToolBox.New
             lblEnvInfo.Visible = false;
             Padding = new Padding(0, 0, 0, 0);
 
-            return;
-
-            lblEnvInfo.Visible = false;
-            Padding = new Padding(0, 0, 0, 0);
-            tlpHighlight.Visible = false;
-
-            if (detail?.IsEnvironmentHighlightSet ?? false && !(pluginControlBase is INoHighlightingPlugin))
-            {
-                Padding = new Padding(10, 0, 10, 10);
-                tlpHighlight.Visible = true;
-
-                lblSourceConnection.Text = detail.EnvironmentHighlightingInfo.Text;
-                lblSourceConnection.ForeColor = detail.EnvironmentHighlightingInfo.TextColor ?? Color.Black;
-                lblSourceConnection.BackColor = detail.EnvironmentHighlightingInfo.Color ?? DefaultBackColor;
-            }
-            else
-            {
-                lblSourceConnection.Text = detail?.EnvironmentHighlightingInfo?.Text ?? detail?.ConnectionName ?? "(Unknown connection name)";
-                lblSourceConnection.ForeColor = Color.Black;
-                lblSourceConnection.BackColor = DefaultBackColor;
-            }
-
-            var backColor = DefaultBackColor;
-            var color = DefaultForeColor;
-
-            if (!(pluginControlBase is INoHighlightingPlugin))
-            {
-                foreach (var td in targetDetails)
-                {
-                    if (td?.IsEnvironmentHighlightSet ?? false)
-                    {
-                        Padding = new Padding(10, 0, 10, 10);
-                        tlpHighlight.Visible = true;
-                    }
-
-                    if (td?.EnvironmentHighlightingInfo != null)
-                    {
-                        backColor = td.EnvironmentHighlightingInfo.Color ?? DefaultBackColor;
-                        color = td.EnvironmentHighlightingInfo.TextColor ?? DefaultForeColor;
-                    }
-                }
-
-                lblTargetConnections.Text = string.Join(", ", targetDetails.Select(c => c.EnvironmentHighlightingInfo?.Text ?? c.ConnectionName));
-                lblTargetConnections.ForeColor = color;
-                lblTargetConnections.BackColor = backColor;
-
-                tlpHighlight.Visible = true;
-            }
-
-            BackColor = backColor;
-
-            Invalidate();
+            //lblEnvInfo.Visible = false;
+            //Padding = new Padding(0, 0, 0, 0);
+            //tlpHighlight.Visible = false;
+            //
+            //if (detail?.IsEnvironmentHighlightSet ?? false && !(pluginControlBase is INoHighlightingPlugin))
+            //{
+            //    Padding = new Padding(10, 0, 10, 10);
+            //    tlpHighlight.Visible = true;
+            //
+            //    lblSourceConnection.Text = detail.EnvironmentHighlightingInfo.Text;
+            //    lblSourceConnection.ForeColor = detail.EnvironmentHighlightingInfo.TextColor ?? Color.Black;
+            //    lblSourceConnection.BackColor = detail.EnvironmentHighlightingInfo.Color ?? DefaultBackColor;
+            //}
+            //else
+            //{
+            //    lblSourceConnection.Text = detail?.EnvironmentHighlightingInfo?.Text ?? detail?.ConnectionName ?? "(Unknown connection name)";
+            //    lblSourceConnection.ForeColor = Color.Black;
+            //    lblSourceConnection.BackColor = DefaultBackColor;
+            //}
+            //
+            //var backColor = DefaultBackColor;
+            //var color = DefaultForeColor;
+            //
+            //if (!(pluginControlBase is INoHighlightingPlugin))
+            //{
+            //    foreach (var td in targetDetails)
+            //    {
+            //        if (td?.IsEnvironmentHighlightSet ?? false)
+            //        {
+            //            Padding = new Padding(10, 0, 10, 10);
+            //            tlpHighlight.Visible = true;
+            //        }
+            //
+            //        if (td?.EnvironmentHighlightingInfo != null)
+            //        {
+            //            backColor = td.EnvironmentHighlightingInfo.Color ?? DefaultBackColor;
+            //            color = td.EnvironmentHighlightingInfo.TextColor ?? DefaultForeColor;
+            //        }
+            //    }
+            //
+            //    lblTargetConnections.Text = string.Join(", ", targetDetails.Select(c => c.EnvironmentHighlightingInfo?.Text ?? c.ConnectionName));
+            //    lblTargetConnections.ForeColor = color;
+            //    lblTargetConnections.BackColor = backColor;
+            //
+            //    tlpHighlight.Visible = true;
+            //}
+            //
+            //BackColor = backColor;
+            //
+            //Invalidate();
         }
 
         private void PluginControlBase_OnCloseTool(object sender, System.EventArgs e)

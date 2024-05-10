@@ -18,19 +18,16 @@ namespace XrmToolBox.Controls
 
         public bool Checked
         {
-            get
-            {
-                return _checked;
-            }
+            get => _checked;
             set
             {
                 _checked = value;
                 Invalidate();
-                OnCheckedChanged?.Invoke(this, new EventArgs());
+                OnCheckedChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
-        public bool Enabled { get; set; } = true;
+        public new bool Enabled { get; set; } = true;
 
         private void SwitchControl_Click(object sender, EventArgs e)
         {

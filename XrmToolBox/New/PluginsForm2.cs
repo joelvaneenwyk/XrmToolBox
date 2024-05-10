@@ -198,7 +198,7 @@ namespace XrmToolBox.New
 
                 SetCategoriesDisplay();
             }
-            catch (Exception error)
+            catch (Exception)
             {
                 pnlNavLeft.Visible = false;
             }
