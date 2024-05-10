@@ -1,4 +1,3 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
@@ -47,49 +46,34 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkMpn.FetchXmlToWebAPI.Te
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug Without Gembox|Any CPU = Debug Without Gembox|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Debug Without Gembox|Any CPU.ActiveCfg = Debug Without Gembox|Any CPU
-		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Debug Without Gembox|Any CPU.Build.0 = Debug Without Gembox|Any CPU
 		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Debug Without Gembox|Any CPU.ActiveCfg = Debug Without Gembox|Any CPU
-		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Debug Without Gembox|Any CPU.Build.0 = Debug Without Gembox|Any CPU
 		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Debug Without Gembox|Any CPU.ActiveCfg = Debug Without Gembox|Any CPU
-		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Debug Without Gembox|Any CPU.Build.0 = Debug Without Gembox|Any CPU
 		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Debug Without Gembox|Any CPU.ActiveCfg = Debug Without Gembox|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Debug Without Gembox|Any CPU.Build.0 = Debug Without Gembox|Any CPU
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug Without Gembox|Any CPU.ActiveCfg = Debug Without Gembox|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug Without Gembox|Any CPU.Build.0 = Debug Without Gembox|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Debug Without Gembox|Any CPU.ActiveCfg = Debug Without Gembox|Any CPU
-		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Debug Without Gembox|Any CPU.Build.0 = Debug Without Gembox|Any CPU
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Debug Without Gembox|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Debug Without Gembox|Any CPU.Build.0 = Debug|Any CPU
 		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Release|Any CPU.ActiveCfg = Release|Any CPU
