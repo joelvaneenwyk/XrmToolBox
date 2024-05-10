@@ -153,6 +153,7 @@
     <EmbeddedResource Include="Images\progress.gif" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\XrmToolBox.AutoUpdater\XrmToolBox.AutoUpdater.csproj" />
     <ProjectReference Include="..\XrmToolBox.Extensibility\XrmToolBox.Extensibility.csproj" />
     <ProjectReference Include="..\XrmToolBox.ToolLibrary\XrmToolBox.ToolLibrary.csproj" />
   </ItemGroup>
