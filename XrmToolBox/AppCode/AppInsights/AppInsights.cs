@@ -188,11 +188,10 @@ public class AppInsights
         return new AiLogRequest(seq++, _aiConfig, action);
     }
 
+    [System.Diagnostics.Conditional("RELEASE")]
     private async void SendToAi(string json, Action<string> handleresult = null)
     {
         var result = string.Empty;
-#if DEBUG
-#else
         try
         {
             using (HttpClient client = HttpHelper.GetHttpClient())
@@ -210,7 +209,6 @@ public class AppInsights
         {
             result = e.ToString();
         }
-#endif
         handleresult?.Invoke(result);
     }
 }
