@@ -16,11 +16,11 @@ namespace XrmToolBox
             {
                 if (returnWithStackTrace)
                 {
-                    return (error.InnerException).ToString();
+                    return error.InnerException.ToString();
                 }
                 else
                 {
-                    return (error.InnerException).Message;
+                    return error.InnerException.Message;
                 }
             }
             else if (error.InnerException != null)

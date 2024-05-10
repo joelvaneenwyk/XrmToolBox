@@ -319,7 +319,9 @@ Would you like to reinstall last stable release of connection controls?";
             return name;
         }
 
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
         private async Task<bool> LoadStore()
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
             try
             {
@@ -994,7 +996,7 @@ Would you like to reinstall last stable release of connection controls?";
             }
         }
 
-        private async void PluginsForm_OpenPluginRequested(object sender, PluginEventArgs e)
+        private void PluginsForm_OpenPluginRequested(object sender, PluginEventArgs e)
         {
             if (store != null && store.PluginsCount > 0)
             {
@@ -1325,7 +1327,7 @@ Would you like to reinstall last stable release of connection controls?";
                                       }
                                   }
 
-                                  var pForm = ((PluginForm)userControl.ParentForm);
+                                  var pForm = (PluginForm)userControl.ParentForm;
 
                                   if (pluginConnections.ContainsKey(pForm))
                                   { pluginConnections[pForm] = connectionDetail; }
@@ -1672,7 +1674,7 @@ Would you like to reinstall last stable release of connection controls?";
                         }
                     }
                 }
-                var activeContent = ((DockContent)dpMain.ActiveContent);
+                var activeContent = (DockContent)dpMain.ActiveContent;
 
                 var isOnAdditionnalGroup = activeContent.Pane?.NestedDockingStatus?.NestedPanes?.Count > 1
                     && (activeContent.Pane?.NestedDockingStatus?.NestedPanes?.Skip(1).Any(p => p.ActiveContent == activeContent) ?? false);
@@ -1920,7 +1922,7 @@ Would you like to reinstall last stable release of connection controls?";
             }
         }
 
-        private async void tsddbTools_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void tsddbTools_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             if (e.ClickedItem == pluginsStoreToolStripMenuItem)
             {

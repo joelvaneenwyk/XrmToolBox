@@ -70,7 +70,7 @@ namespace XrmToolBox.ToolLibrary.AppCode
         {
             return Version.ToString()
                 + (isCurrent ? " (current)" : "")
-                + ((minXtbVersion > minCompatibleVersion || minCompatibleVersion > new Version(Application.ProductVersion)) ? " (incompatible)" : "");
+                + (minXtbVersion > minCompatibleVersion || minCompatibleVersion > new Version(Application.ProductVersion) ? " (incompatible)" : "");
         }
 
         private void GetDetails()

@@ -75,7 +75,7 @@ namespace MsCrmTools.SampleTool
                         var response = (WhoAmIResponse)Service.Execute(request);
 
                         e.Result = response.UserId;
-                    } while ((e.Cancel == false) && (isMultipleCallChecked));
+                    } while (e.Cancel == false && isMultipleCallChecked);
                 },
                 ProgressChanged = e =>
                 {
