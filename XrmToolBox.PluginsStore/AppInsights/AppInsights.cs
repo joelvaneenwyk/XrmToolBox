@@ -21,6 +21,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -29,6 +30,8 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using XrmToolBox.PluginsStore;
+
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 public static class Extensions
 {
@@ -188,7 +191,10 @@ public class AppInsights
         return new AiLogRequest(seq++, _aiConfig, action);
     }
 
+    [SuppressMessage("ReSharper", "MemberCanBeMadeStatic.Local")]
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
     private async void SendToAi(string json, Action<string> handleresult = null)
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
     {
         var result = string.Empty;
 #if DEBUG
