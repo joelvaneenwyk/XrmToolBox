@@ -27,7 +27,9 @@ namespace XrmToolBox.PluginsStore
         private const string AiKey = "77a2080e-f82c-4b2f-bb77-eb407236b729";
         private readonly List<string> selectedPackagesId;
         private readonly StoreFromPortal store;
-        private AppInsights ai = new AppInsights(new AiConfig(AiEndpoint, AiKey));
+#pragma warning disable CS0618 // Type or member is obsolete
+        private readonly AppInsights _appInsights = new AppInsights(new AiConfig(AiEndpoint, AiKey));
+#pragma warning restore CS0618 // Type or member is obsolete
         private List<ListViewItem> lvic;
         private int newPlugin, updatePlugin, allPlugins;
         private Thread searchThread;
@@ -48,16 +50,18 @@ namespace XrmToolBox.PluginsStore
 
             store = new StoreFromPortal(allowConnectionControlPrerelease);
             store.OnDownloadingTool += Store_OnDownloadingTool;
-            store.LoadNuget();
+            _ = store.LoadNuget();
             store.PluginsUpdated += (sender, e) => { PluginsUpdated?.Invoke(sender, e); };
             var size = store.CalculateCacheFolderSize();
             tsbCleanCacheFolder.ToolTipText = $@"Clean XrmToolBox Tool Library cache folder
 
 Current cache folder size: {size}MB";
 
-            tooltip = new ToolTip();
-            tooltip.ToolTipIcon = ToolTipIcon.Info;
-            tooltip.ToolTipTitle = "Why a tool does not show as open source?";
+            tooltip = new ToolTip
+            {
+                ToolTipIcon = ToolTipIcon.Info,
+                ToolTipTitle = "Why a tool does not show as open source?"
+            };
             tooltip.SetToolTip(chkIsOpenSource, "The \"Is Open source\" property is handled manually. Please contact us if a tool does not show as Open source whereas it should");
 
             var leftColumnSize = TextRenderer.MeasureText(lblToolLabelDownloads.Text, lblToolLabelDownloads.Font);
@@ -676,7 +680,7 @@ Current cache folder size: {size}MB";
 
             foreach (var p in packages)
             {
-                ai.WritePluginEvent(p.Name, p.Version, "Plugin-Install");
+                _appInsights.WritePluginEvent(p.Name, p.Version, "Plugin-Install");
             }
 
             try
@@ -773,7 +777,7 @@ Current cache folder size: {size}MB";
 
             foreach (var p in packages)
             {
-                ai.WritePluginEvent(p.Name, p.Version, "Plugin-Uninstall");
+                _appInsights.WritePluginEvent(p.Name, p.Version, "Plugin-Uninstall");
             }
         }
 
