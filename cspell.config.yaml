@@ -2,7 +2,7 @@ version: "0.2"
 ignorePaths: []
 dictionaryDefinitions:
   - name: cspell-xrm-toolbox
-    path: ./.config/cspell-xrm-toolbox.txt
+    path: ./.vscode/cspell-xrm-toolbox.txt
     addWords: true
 dictionaries:
   - cspell-xrm-toolbox
