@@ -29,6 +29,7 @@
 		<UseWPF>true</UseWPF>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 		<Configurations>Debug;Release</Configurations>
+        <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
