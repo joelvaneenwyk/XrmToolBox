@@ -10,9 +10,6 @@ on:
 
 jobs:
   analyze:
-    name: Analyze (${{ matrix.language }})
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
-    timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
     permissions:
       # required for all workflows
       security-events: write
@@ -31,6 +28,11 @@ jobs:
           - language: csharp
             build-mode: manual
             configuration: Release
+
+    name: Analyze (${{ matrix.language }})
+    runs-on: "windows-latest"
+    timeout-minutes: 360
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
