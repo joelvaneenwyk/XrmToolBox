@@ -8,9 +8,6 @@
 
 #endregion
 
-#region Imports
-
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
@@ -18,8 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using XrmToolBox.Extensibility.Interfaces;
-
-#endregion
+using Newtonsoft.Json;
 
 namespace XrmToolBox.Extensibility.Manifest
 {

@@ -13,7 +13,6 @@ namespace XrmToolBox.New
     {
         private readonly string base64Image;
         private readonly MostRecentlyUsedItem item;
-        private Thread clickThread;
 
         public MostRecentlyUsedItemControl(string base64Image, MostRecentlyUsedItem item)
         {

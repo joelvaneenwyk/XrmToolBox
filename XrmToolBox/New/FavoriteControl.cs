@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Threading;
 using System.Windows.Forms;
 using XrmToolBox.AppCode;
 using XrmToolBox.New.EventArgs;
@@ -13,7 +12,6 @@ namespace XrmToolBox.New
     {
         private readonly string base64Image;
         private readonly Favorite item;
-        private Thread clickThread;
 
         public FavoriteControl(string base64Image, Favorite item)
         {

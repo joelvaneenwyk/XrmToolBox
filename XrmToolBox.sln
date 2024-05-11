@@ -1,98 +1,135 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32002.261
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmToolBox", "XrmToolBox\XrmToolBox.csproj", "{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XrmToolBox", "XrmToolBox\XrmToolBox.csproj", "{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D746CBE7-7787-47FC-B773-F089A44DF8C9} = {D746CBE7-7787-47FC-B773-F089A44DF8C9}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{1A7814D2-1185-484E-92CC-7DD71DDE6488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsCrmTools.SampleTool", "Plugins\MsCrmTools.SampleTool\MsCrmTools.SampleTool.csproj", "{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsCrmTools.SampleTool", "Plugins\MsCrmTools.SampleTool\MsCrmTools.SampleTool.csproj", "{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmToolBox.Extensibility", "XrmToolBox.Extensibility\XrmToolBox.Extensibility.csproj", "{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XrmToolBox.Extensibility", "XrmToolBox.Extensibility\XrmToolBox.Extensibility.csproj", "{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmToolBox.AutoUpdater", "XrmToolBox.AutoUpdater\XrmToolBox.AutoUpdater.csproj", "{564C72C8-586E-4218-B6B3-F464F7C3903A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XrmToolBox.AutoUpdater", "XrmToolBox.AutoUpdater\XrmToolBox.AutoUpdater.csproj", "{564C72C8-586E-4218-B6B3-F464F7C3903A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LicenseChecker", "LicenseChecker", "{08305693-A5D7-41FA-B476-20874647809B}"
 	ProjectSection(SolutionItems) = preProject
 		LicenseChecker\McTools.StopAdvertisement.dll = LicenseChecker\McTools.StopAdvertisement.dll
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmToolBox.ToolLibrary", "XrmToolBox.ToolLibrary\XrmToolBox.ToolLibrary.csproj", "{626AEBA8-4315-4D82-B8B9-B94200FD7589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XrmToolBox.ToolLibrary", "XrmToolBox.ToolLibrary\XrmToolBox.ToolLibrary.csproj", "{626AEBA8-4315-4D82-B8B9-B94200FD7589}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Rappen.XRM.Helpers", "Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Helpers\Rappen.XRM.Helpers.shproj", "{2EBF1257-150F-46C8-8BBD-2A9235C0EB45}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Rappen.XRM.Tokens", "Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Tokens\Rappen.XRM.Tokens.shproj", "{B721386D-0FDF-415F-975E-A4F8D60CD962}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Rappen.XTB.Helpers", "Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XTB.Helpers\Rappen.XTB.Helpers.shproj", "{0B88B381-EE9D-41E8-A62C-90152C42DE90}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MsCrmTools.MetadataBrowser.Shared", "Plugins\FetchXmlBuilder\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser.Shared.shproj", "{9C6AADAA-CF44-4BCE-90C7-79E6C6EF6DEC}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MarkMpn.XmlSchemaAutocomplete", "Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutocomplete.shproj", "{CE3B0F1B-1668-4AC3-A7AD-FE1872C6BCC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FetchXmlBuilder", "FetchXmlBuilder", "{915E4907-CE83-4B6F-925D-AB65BD1B43D5}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MarkMpn.XmlSchemaAutocomplete.Scintilla", "Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutocomplete.Scintilla\MarkMpn.XmlSchemaAutocomplete.Scintilla.shproj", "{4C497B9C-B9DD-4B3D-8ECC-C504AFCADD65}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MarkMpn.FetchXmlToWebAPI", "Plugins\FetchXmlBuilder\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.shproj", "{543E6D79-2913-4B00-AAAC-5661F6ADB1A5}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FXBEditorUtils", "Plugins\FetchXmlBuilder\FXBEditorUtils\FXBEditorUtils.shproj", "{FAF35E13-1A84-45B3-A315-C62D15AC888A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FetchXmlBuilder", "Plugins\FetchXmlBuilder\FetchXmlBuilder\FetchXmlBuilder.csproj", "{D746CBE7-7787-47FC-B773-F089A44DF8C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkMpn.FetchXmlToWebAPI.Tests", "Plugins\FetchXmlBuilder\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.Tests\MarkMpn.FetchXmlToWebAPI.Tests.csproj", "{B1426DF1-9233-43F7-AED4-131DD5E6696E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "{root}", "{root}", "{87228B40-C735-4D7B-B634-C1F5F44762DE}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.gitmodules = .gitmodules
+		CNAME = CNAME
+		cspell.config.yaml = cspell.config.yaml
+		Directory.Build.props = Directory.Build.props
+		LICENSE.txt = LICENSE.txt
+		nuget.config = nuget.config
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Debug|Mixed Platforms = Debug|Mixed Platforms
-		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-		Release|Mixed Platforms = Release|Mixed Platforms
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{328D55BE-8B9A-4087-A5C2-9FBAF623F54B}.Release|x86.ActiveCfg = Release|Any CPU
 		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF}.Release|x86.ActiveCfg = Release|Any CPU
 		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{DF77AEA3-43F7-403C-91AF-3023A3BB06EC}.Release|x86.ActiveCfg = Release|Any CPU
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Debug|x86.Build.0 = Debug|Any CPU
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|x86.ActiveCfg = Release|Any CPU
-		{564C72C8-586E-4218-B6B3-F464F7C3903A}.Release|x86.Build.0 = Release|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Debug|x86.Build.0 = Debug|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|Any CPU.Build.0 = Release|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|x86.ActiveCfg = Release|Any CPU
-		{626AEBA8-4315-4D82-B8B9-B94200FD7589}.Release|x86.Build.0 = Release|Any CPU
+		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D746CBE7-7787-47FC-B773-F089A44DF8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5BF1E228-F898-40CF-B8FB-8412D8C81CFF} = {1A7814D2-1185-484E-92CC-7DD71DDE6488}
+		{2EBF1257-150F-46C8-8BBD-2A9235C0EB45} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
+		{B721386D-0FDF-415F-975E-A4F8D60CD962} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
+		{0B88B381-EE9D-41E8-A62C-90152C42DE90} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
+		{9C6AADAA-CF44-4BCE-90C7-79E6C6EF6DEC} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
+		{CE3B0F1B-1668-4AC3-A7AD-FE1872C6BCC3} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
+		{915E4907-CE83-4B6F-925D-AB65BD1B43D5} = {1A7814D2-1185-484E-92CC-7DD71DDE6488}
+		{4C497B9C-B9DD-4B3D-8ECC-C504AFCADD65} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
+		{543E6D79-2913-4B00-AAAC-5661F6ADB1A5} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
+		{FAF35E13-1A84-45B3-A315-C62D15AC888A} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
+		{D746CBE7-7787-47FC-B773-F089A44DF8C9} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
+		{B1426DF1-9233-43F7-AED4-131DD5E6696E} = {915E4907-CE83-4B6F-925D-AB65BD1B43D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5CC3AFE2-F092-40F3-A540-539389A045B6}
 		BuildVersion_ConfigurationName = Release
+		SolutionGuid = {5CC3AFE2-F092-40F3-A540-539389A045B6}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XTB.Helpers\Rappen.XTB.Helpers.projitems*{0b88b381-ee9d-41e8-a62c-90152c42de90}*SharedItemsImports = 13
+		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Helpers\Rappen.XRM.Helpers.projitems*{2ebf1257-150f-46c8-8bbd-2a9235c0eb45}*SharedItemsImports = 13
+		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutocomplete.Scintilla\MarkMpn.XmlSchemaAutocomplete.Scintilla.projitems*{4c497b9c-b9dd-4b3d-8ecc-c504afcadd65}*SharedItemsImports = 13
+		Plugins\FetchXmlBuilder\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.projitems*{543e6d79-2913-4b00-aaac-5661f6adb1a5}*SharedItemsImports = 13
+		Plugins\FetchXmlBuilder\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser.Shared.projitems*{9c6aadaa-cf44-4bce-90c7-79e6c6ef6dec}*SharedItemsImports = 13
+		Plugins\FetchXmlBuilder\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.projitems*{b1426df1-9233-43f7-aed4-131dd5e6696e}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Tokens\Rappen.XRM.Tokens.projitems*{b721386d-0fdf-415f-975e-a4f8d60cd962}*SharedItemsImports = 13
+		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete.projitems*{ce3b0f1b-1668-4ac3-a7ad-fe1872c6bcc3}*SharedItemsImports = 13
+		Plugins\FetchXmlBuilder\FXBEditorUtils\FXBEditorUtils.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI\MarkMpn.FetchXmlToWebAPI.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutocomplete.Scintilla\MarkMpn.XmlSchemaAutocomplete.Scintilla.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete\MarkMpn.XmlSchemaAutoComplete.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser\MsCrmTools.MetadataBrowser.Shared.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Helpers\Rappen.XRM.Helpers.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XRM.Tokens\Rappen.XRM.Tokens.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\Rappen.XTB.Helper\Rappen.XTB.Helpers\Rappen.XTB.Helpers.projitems*{d746cbe7-7787-47fc-b773-f089a44df8c9}*SharedItemsImports = 5
+		Plugins\FetchXmlBuilder\FXBEditorUtils\FXBEditorUtils.projitems*{faf35e13-1a84-45b3-a315-c62d15ac888a}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(CodealikeProperties) = postSolution
 		SolutionGuid = 2bf66b53-ea6f-433b-b455-00e70ee33cd0

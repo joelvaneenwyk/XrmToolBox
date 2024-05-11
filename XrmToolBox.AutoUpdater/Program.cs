@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace XrmToolBox.AutoUpdater
@@ -13,7 +14,7 @@ namespace XrmToolBox.AutoUpdater
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AutoUpdater(args[0]));
+            Application.Run(new AutoUpdater(args.FirstOrDefault()));
         }
     }
 }

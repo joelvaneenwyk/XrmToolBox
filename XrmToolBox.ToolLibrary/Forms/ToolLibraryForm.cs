@@ -153,20 +153,19 @@ namespace XrmToolBox.ToolLibrary.Forms
             var mi = new MethodInvoker(new Action(() =>
             {
                 var filteredTools = items.Where(i =>
-                       (txtSearch.Text.Length == 0 || (((XtbPlugin)i.Tag).Name.ToLower().IndexOf(txtSearch.Text, StringComparison.InvariantCultureIgnoreCase) >= 0
-                       || ((XtbPlugin)i.Tag).Description.ToLower().IndexOf(txtSearch.Text, StringComparison.InvariantCultureIgnoreCase) >= 0
-                       || ((XtbPlugin)i.Tag).Authors.ToLower().IndexOf(txtSearch.Text, StringComparison.InvariantCultureIgnoreCase) >= 0
-                       ))
-                       && (cbbCategories.SelectedIndex == 0 || (((XtbPlugin)i.Tag).Categories.Contains(cbbCategories.SelectedItem.ToString())))
-                       && (cbbRepositories.SelectedItem.ToString() == "-- All --" || (((XtbPlugin)i.Tag).SourceRepositoryName == cbbRepositories.SelectedItem.ToString()))
-                       && (!chkFilterOpenSource.Checked || (((XtbPlugin)i.Tag).IsOpenSource ?? false) && chkFilterOpenSource.Checked && !(((XtbPlugin)i.Tag).IsFromCustomRepo))
-                       && (!chkFilterMvp.Checked || (((XtbPlugin)i.Tag).IsMvp ?? false) && chkFilterMvp.Checked && !(((XtbPlugin)i.Tag).IsFromCustomRepo))
-                       && (!chkFilterTopRating.Checked || (((XtbPlugin)i.Tag).TotalFeedbackRating > settings.MostRatedMinNumberOfVotes && ((XtbPlugin)i.Tag).AverageFeedbackRating > settings.MostRatedMinRatingAverage && chkFilterTopRating.Checked) && !(((XtbPlugin)i.Tag).IsFromCustomRepo))
-                       && (!chkFilterNew.Checked || (((XtbPlugin)i.Tag).FirstReleaseDate > DateTime.Now.AddMonths(-1)) && chkFilterNew.Checked)
-                       && ((((XtbPlugin)i.Tag).Compatibilty != CompatibleState.Compatible) && chkIncompatible.Checked
-                       || (((XtbPlugin)i.Tag).Action == PackageInstallAction.None) && chkShowInstalled.Checked
-                       || (((XtbPlugin)i.Tag).Action == PackageInstallAction.Update) && chkShowUpdates.Checked
-                       || (((XtbPlugin)i.Tag).Action == PackageInstallAction.Install) && chkToInstall.Checked));
+                       (txtSearch.Text.Length == 0 || ((XtbPlugin)i.Tag).Name.ToLower().IndexOf(txtSearch.Text, StringComparison.InvariantCultureIgnoreCase) >= 0
+                                                   || ((XtbPlugin)i.Tag).Description.ToLower().IndexOf(txtSearch.Text, StringComparison.InvariantCultureIgnoreCase) >= 0
+                                                   || ((XtbPlugin)i.Tag).Authors.ToLower().IndexOf(txtSearch.Text, StringComparison.InvariantCultureIgnoreCase) >= 0)
+                       && (cbbCategories.SelectedIndex == 0 || ((XtbPlugin)i.Tag).Categories.Contains(cbbCategories.SelectedItem.ToString()))
+                       && (cbbRepositories.SelectedItem.ToString() == "-- All --" || ((XtbPlugin)i.Tag).SourceRepositoryName == cbbRepositories.SelectedItem.ToString())
+                       && (!chkFilterOpenSource.Checked || (((XtbPlugin)i.Tag).IsOpenSource ?? false) && chkFilterOpenSource.Checked && !((XtbPlugin)i.Tag).IsFromCustomRepo)
+                       && (!chkFilterMvp.Checked || (((XtbPlugin)i.Tag).IsMvp ?? false) && chkFilterMvp.Checked && !((XtbPlugin)i.Tag).IsFromCustomRepo)
+                       && (!chkFilterTopRating.Checked || ((XtbPlugin)i.Tag).TotalFeedbackRating > settings.MostRatedMinNumberOfVotes && ((XtbPlugin)i.Tag).AverageFeedbackRating > settings.MostRatedMinRatingAverage && chkFilterTopRating.Checked && !((XtbPlugin)i.Tag).IsFromCustomRepo)
+                       && (!chkFilterNew.Checked || ((XtbPlugin)i.Tag).FirstReleaseDate > DateTime.Now.AddMonths(-1) && chkFilterNew.Checked)
+                       && (((XtbPlugin)i.Tag).Compatibilty != CompatibleState.Compatible && chkIncompatible.Checked
+                       || ((XtbPlugin)i.Tag).Action == PackageInstallAction.None && chkShowInstalled.Checked
+                       || ((XtbPlugin)i.Tag).Action == PackageInstallAction.Update && chkShowUpdates.Checked
+                       || ((XtbPlugin)i.Tag).Action == PackageInstallAction.Install && chkToInstall.Checked));
 
                 if (cbbToolSort.SelectedIndex == 0)
                 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace XrmToolBox.Extensibility.Interfaces
+﻿namespace XrmToolBox.Extensibility.Interfaces
 {
     public interface IXrmToolBoxPlugin
     {

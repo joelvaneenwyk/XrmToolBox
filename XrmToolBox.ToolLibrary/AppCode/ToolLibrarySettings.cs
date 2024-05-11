@@ -1,5 +1,4 @@
-﻿using System;
-using XrmToolBox.Extensibility.Interfaces;
+﻿using XrmToolBox.Extensibility.Interfaces;
 
 namespace XrmToolBox.ToolLibrary.AppCode
 {

@@ -824,7 +824,7 @@ namespace XrmToolBox
             {
                 DescriptionAttribute dna = (DescriptionAttribute)Attribute.GetCustomAttribute(fi,
                     typeof(DescriptionAttribute));
-                if ((dna != null) && ((string)value == dna.Description))
+                if (dna != null && (string)value == dna.Description)
                     return Enum.Parse(enumType, fi.Name);
             }
             return Enum.Parse(enumType, (string)value);

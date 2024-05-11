@@ -3,8 +3,6 @@
 // CODEPLEX: http://xrmtoolbox.codeplex.com
 // BLOG: http://www.dotnetdust.blogspot.com/
 
-using System;
-using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace XrmToolBox.Extensibility.Interfaces

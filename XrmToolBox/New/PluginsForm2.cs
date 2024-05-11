@@ -167,7 +167,7 @@ namespace XrmToolBox.New
 
                                 new Bitmap(image).Save(imagePath);
                             }
-                            catch (Exception error)
+                            catch (Exception)
                             { }
                         }
                     }
@@ -198,7 +198,7 @@ namespace XrmToolBox.New
 
                 SetCategoriesDisplay();
             }
-            catch (Exception error)
+            catch (Exception)
             {
                 pnlNavLeft.Visible = false;
             }
@@ -618,7 +618,7 @@ namespace XrmToolBox.New
             {
                 if (e.PropertyName == nameof(Options.Instance.IconDisplayMode))
                 {
-                    imageList1.ImageSize = new Size(imageList1.ImageSize.Width, ((DisplayIcons)e.Value) == DisplayIcons.Large ? 100 : 50);
+                    imageList1.ImageSize = new Size(imageList1.ImageSize.Width, (DisplayIcons)e.Value == DisplayIcons.Large ? 100 : 50);
                     SetCategoriesBottomButtonsDisplay();
                 }
 
@@ -940,7 +940,7 @@ namespace XrmToolBox.New
             pnlLeftBottom.Height = 100;
             btnChangeSize.Height = 40;
             btnChangeSize.ImageAlign = expanded ? ContentAlignment.MiddleLeft : ContentAlignment.MiddleCenter;
-            btnChangeSize.Text = expanded ? (Options.Instance.DisplayLargeIcons ? "Use small layout" : "Use big layout") : "";
+            btnChangeSize.Text = expanded ? Options.Instance.DisplayLargeIcons ? "Use small layout" : "Use big layout" : "";
             btnChangeSize.Image = Options.Instance.DisplayLargeIcons ? Resources.Shrink32.ResizeImage(24, 24) : Resources.Expand32.ResizeImage(24, 24);
             btnChangeSize.FlatStyle = FlatStyle.Flat;
             btnChangeSize.FlatAppearance.BorderSize = 0;
@@ -948,7 +948,7 @@ namespace XrmToolBox.New
             btnFilterOperator.Height = 40;
             btnFilterOperator.Font = new Font(btnFilterOperator.Font, expanded ? FontStyle.Regular : FontStyle.Bold);
             btnFilterOperator.UseMnemonic = false;
-            btnFilterOperator.Text = expanded ? (userOrFilterOperatorForCategory ? "Use AND operator" : "Use OR operator") : (userOrFilterOperatorForCategory ? "&&" : "||");
+            btnFilterOperator.Text = expanded ? userOrFilterOperatorForCategory ? "Use AND operator" : "Use OR operator" : userOrFilterOperatorForCategory ? "&&" : "||";
             btnFilterOperator.FlatStyle = FlatStyle.Flat;
             btnFilterOperator.FlatAppearance.BorderSize = 0;
             tt.SetToolTip(btnFilterOperator, userOrFilterOperatorForCategory ? "Currently use OR operator\r\n\r\nClick to use AND operator" : "Currently use AND operator\r\n\r\nClick to use OR operator");

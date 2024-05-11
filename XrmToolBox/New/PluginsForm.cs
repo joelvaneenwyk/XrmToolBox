@@ -305,7 +305,7 @@ namespace XrmToolBox.New
         {
             var pluginType = plugin.Metadata.PluginType;
             var pm = (T)pluginsModels.FirstOrDefault(t => ((Lazy<IXrmToolBoxPlugin, IPluginMetadataExt>)t.Tag).Metadata.PluginType == pluginType && t is T);
-            var small = (typeof(T) == typeof(SmallPluginModel));
+            var small = typeof(T) == typeof(SmallPluginModel);
 
             if (pm == null)
             {
@@ -563,7 +563,7 @@ namespace XrmToolBox.New
                 var filteredList = (from f in filteredPlugins
                                     join s in storePlugins
                                      on f.Metadata.Name equals s.Name
-                                    orderby (s.TotalFeedbackRating + 1000000 * s.AverageFeedbackRating) descending
+                                    orderby s.TotalFeedbackRating + 1000000 * s.AverageFeedbackRating descending
                                     select f).ToList();
 
                 foreach (var plugin in filteredList)
