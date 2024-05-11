@@ -7,6 +7,7 @@
     <UseWPF>true</UseWPF>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <Configurations>Debug;Release</Configurations>
+		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>XrmToolBox.Updater.ico</ApplicationIcon>
@@ -35,6 +36,7 @@
     <Content Include="XrmToolBox.Updater.ico" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="8.0.0-preview.7.23375.6" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="6.0.0-preview.4.21253.7"/>

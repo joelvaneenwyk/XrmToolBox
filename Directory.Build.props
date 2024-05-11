@@ -2,6 +2,7 @@
   <PropertyGroup>
     <Deterministic>true</Deterministic>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-    <NoWarn>CS8625;CS0612;1701;1702;MSB3277;NU1603;CS8981;IDE0160;IDE0028;CS8600;CS8603;CS8601;MSB3270;CA1871;CS0436;CS0067;CS1591</NoWarn>
+    <!--<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>-->
+    <NoWarn>NU1504;CS8625;CS0612;1701;1702;MSB3277;NU1603;CS8981;IDE0160;IDE0028;CS8600;CS8603;CS8601;MSB3270;CA1871;CS0436;CS0067;CS1591</NoWarn>
   </PropertyGroup>
 </Project>

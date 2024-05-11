@@ -290,7 +290,8 @@
           "Microsoft.NETCore.Targets": "[6.0.0-preview.4.21253.7, )",
           "System.ComponentModel.Composition": "[8.0.0, )",
           "System.Data.DataSetExtensions": "[4.5.0, )",
-          "System.Private.Uri": "[4.3.2, )"
+          "System.Private.Uri": "[4.3.2, )",
+          "System.Resources.Extensions": "[8.0.0, )"
         }
       },
       "xrmtoolbox.extensibility": {
@@ -305,7 +306,8 @@
           "System.ComponentModel.Composition": "[8.0.0, )",
           "System.Data.DataSetExtensions": "[4.5.0, )",
           "System.Numerics.Vectors": "[4.5.0, )",
-          "System.Private.Uri": "[4.3.2, )"
+          "System.Private.Uri": "[4.3.2, )",
+          "System.Resources.Extensions": "[8.0.0, )"
         }
       },
       "xrmtoolbox.toollibrary": {
