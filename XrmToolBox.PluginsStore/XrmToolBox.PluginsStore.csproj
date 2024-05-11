@@ -6,6 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DocumentationFile>bin\Release\XrmToolBox.PluginsStore.xml</DocumentationFile>
@@ -35,6 +36,7 @@
     <ProjectReference Include="..\XrmToolBox.Extensibility\XrmToolBox.Extensibility.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="NuGet.Frameworks" Version="6.9.1" />
     <PackageReference Include="NuGet.Protocol" Version="6.9.1" />
