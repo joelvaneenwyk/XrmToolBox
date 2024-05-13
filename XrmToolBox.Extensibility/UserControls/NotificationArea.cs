@@ -50,7 +50,7 @@ namespace XrmToolBox.Extensibility.UserControls
 
         private void llLearnMore_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(moreInfoUri.AbsoluteUri); 
+            Process.Start(moreInfoUri.AbsoluteUri);
         }
     }
 }

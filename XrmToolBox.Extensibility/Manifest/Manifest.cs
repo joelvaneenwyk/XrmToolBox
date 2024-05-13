@@ -14,9 +14,9 @@ using System;
 
 namespace XrmToolBox.Extensibility.Manifest
 {
-	public class Manifest
-	{
-		public AssemblyInfo[] ScannedAssemblies { get; set; } = Array.Empty<AssemblyInfo>();
-		public PluginMetadata[] PluginMetadata { get; set; } = Array.Empty<PluginMetadata>();
-	}
+    public class Manifest
+    {
+        public AssemblyInfo[] ScannedAssemblies { get; set; } = Array.Empty<AssemblyInfo>();
+        public PluginMetadata[] PluginMetadata { get; set; } = Array.Empty<PluginMetadata>();
+    }
 }

@@ -72,9 +72,9 @@ namespace XrmToolBox.AppCode
             var yValue = y.SubItems[col].Text;
 
             int ixValue, iyValue;
-            if(int.TryParse(xValue, out ixValue) && int.TryParse(yValue, out iyValue))
+            if (int.TryParse(xValue, out ixValue) && int.TryParse(yValue, out iyValue))
             {
-                if(innerOrder == SortOrder.Ascending)
+                if (innerOrder == SortOrder.Ascending)
                 {
                     return ixValue < iyValue ? 1 : -1;
                 }

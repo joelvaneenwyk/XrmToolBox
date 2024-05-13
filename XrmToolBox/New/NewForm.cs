@@ -1867,7 +1867,7 @@ Would you like to reinstall last stable release of connection controls?";
             if (defaultSearchTerm != null)
             {
                 libraryForm.SetSearchTerm(defaultSearchTerm);
-            } 
+            }
             libraryForm.Show(dpMain, DockState.Document);
         }
 

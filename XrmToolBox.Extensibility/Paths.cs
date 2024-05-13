@@ -12,7 +12,7 @@ namespace XrmToolBox.Extensibility
         {
             get
             {
-                return Path.Combine(rootPath?? XrmToolBoxPath, "Plugins");
+                return Path.Combine(rootPath ?? XrmToolBoxPath, "Plugins");
             }
         }
         public static string LogsPath
@@ -47,7 +47,7 @@ namespace XrmToolBox.Extensibility
 
         public static void OverrideRootPath(string newRootPath)
         {
-            if(!Directory.Exists(Path.GetFullPath(Environment.ExpandEnvironmentVariables(newRootPath))))
+            if (!Directory.Exists(Path.GetFullPath(Environment.ExpandEnvironmentVariables(newRootPath))))
                 throw new DirectoryNotFoundException(newRootPath);
 
             rootPath = newRootPath;

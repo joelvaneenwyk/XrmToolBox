@@ -23,7 +23,7 @@ namespace XrmToolBox
         private static PluginManagerExtended instance;
         private CompositionContainer container;
         private DirectoryCatalog directoryCatalog;
-        
+
         private PluginManagerExtended()
         {
             AppDomain.CurrentDomain.AssemblyResolve += LookupAssembly;

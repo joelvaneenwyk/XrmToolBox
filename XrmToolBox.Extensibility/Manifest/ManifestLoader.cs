@@ -90,13 +90,13 @@ namespace XrmToolBox.Extensibility.Manifest
         }
 
         public static IReadOnlyCollection<Lazy<IXrmToolBoxPlugin, IPluginMetadataExt>> LoadPlugins(Manifest manifest)
-		{
+        {
             return LoadPlugins<IPluginMetadataExt>(manifest);
         }
 
         public static IReadOnlyCollection<Lazy<IXrmToolBoxPlugin, TPluginsMetadata>> LoadPlugins<TPluginsMetadata>(Manifest manifest)
-			where TPluginsMetadata : IPluginMetadata
-		{
+            where TPluginsMetadata : IPluginMetadata
+        {
             return manifest?.PluginMetadata
                 .Select(p =>
                     new Lazy<IXrmToolBoxPlugin, TPluginsMetadata>(
