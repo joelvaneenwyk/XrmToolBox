@@ -64,6 +64,11 @@
           "DockPanelSuite": "3.1.0"
         }
       },
+      "jacobslusser.ScintillaNET": {
+        "type": "Transitive",
+        "resolved": "3.6.3",
+        "contentHash": "lERpP3K4x1ge5sW5eG+Yhv9sEFF4MDiHd/nuXTu/xSgPGODQo7K8hCEivqulrFypzFPZ+TsLDZoqucmi5blbdg=="
+      },
       "Microsoft.Bcl.AsyncInterfaces": {
         "type": "Transitive",
         "resolved": "8.0.0",
@@ -279,7 +284,8 @@
           "System.Resources.Extensions": "[8.0.0, )",
           "XrmToolBox.AutoUpdater": "[1.0.0, )",
           "XrmToolBox.Extensibility": "[1.0.0, )",
-          "XrmToolBox.ToolLibrary": "[1.0.0, )"
+          "XrmToolBox.ToolLibrary": "[1.0.0, )",
+          "jacobslusser.ScintillaNET": "[3.6.3, )"
         }
       },
       "xrmtoolbox.autoupdater": {

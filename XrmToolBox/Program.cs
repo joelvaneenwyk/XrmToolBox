@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -74,8 +74,8 @@ namespace XrmToolBox
         {
             try
             {
-                Assembly.Load(
-                    "Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35");
+                //Assembly.Load(
+                //    "Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35");
                 return true;
             }
             catch
@@ -88,11 +88,11 @@ namespace XrmToolBox
                     if (Environment.OSVersion.Version.Major > 6 ||
                         Environment.OSVersion.Version.Major == 6 && Environment.OSVersion.Version.Minor > 1)
                     {
-                        Process.Start("http://blogs.technet.com/b/tvishnun1/archive/2012/06/12/windows-identity-foundation-in-windows-8.aspx");
+                        Process.Start("https://blogs.technet.com/b/tvishnun1/archive/2012/06/12/windows-identity-foundation-in-windows-8.aspx");
                     }
                     else
                     {
-                        Process.Start("http://support.microsoft.com/kb/974405");
+                        Process.Start("https://support.microsoft.com/kb/974405");
                     }
                 }
 
