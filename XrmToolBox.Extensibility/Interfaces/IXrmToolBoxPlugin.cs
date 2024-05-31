@@ -7,7 +7,7 @@
         IXrmToolBoxPluginControl GetControl();
 
         string GetAssemblyQualifiedName();
-        
+
         string GetVersion();
     }
 }

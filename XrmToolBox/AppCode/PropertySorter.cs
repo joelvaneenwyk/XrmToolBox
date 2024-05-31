@@ -10,7 +10,7 @@ namespace OrderedPropertyGrid
     public class PropertySorter : ExpandableObjectConverter
     {
         #region Methods
-        public override bool GetPropertiesSupported(ITypeDescriptorContext context) 
+        public override bool GetPropertiesSupported(ITypeDescriptorContext context)
         {
             return true;
         }
@@ -31,14 +31,14 @@ namespace OrderedPropertyGrid
                     // If the attribute is found, then create an pair object to hold it
                     //
                     PropertyOrderAttribute poa = (PropertyOrderAttribute)attribute;
-                    orderedProperties.Add(new PropertyOrderPair(pd.Name,poa.Order));
+                    orderedProperties.Add(new PropertyOrderPair(pd.Name, poa.Order));
                 }
                 else
                 {
                     //
                     // If no order attribute is specifed then given it an order of 0
                     //
-                    orderedProperties.Add(new PropertyOrderPair(pd.Name,0));
+                    orderedProperties.Add(new PropertyOrderPair(pd.Name, 0));
                 }
             }
             //
@@ -117,7 +117,7 @@ namespace OrderedPropertyGrid
                 // If order not specified, sort by name
                 //
                 string otherName = ((PropertyOrderPair)obj)._name;
-                return string.Compare(_name,otherName);
+                return string.Compare(_name, otherName);
             }
             else if (otherOrder > _order)
             {

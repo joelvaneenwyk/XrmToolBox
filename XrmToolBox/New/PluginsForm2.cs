@@ -1,4 +1,4 @@
-﻿using McTools.Xrm.Connection;
+using McTools.Xrm.Connection;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,7 @@ namespace XrmToolBox.New
         private int menuWidth;
         private Thread searchThread;
         private ToolLibrary.ToolLibrary store;
-        private ToolTip tt = new ToolTip();
+        private readonly ToolTip tt = new ToolTip();
         private bool userOrFilterOperatorForCategory;
 
         #endregion Variables
@@ -527,7 +527,7 @@ namespace XrmToolBox.New
 
                 if (store.XrmToolBoxPlugins == null)
                 {
-                    store.LoadTools();
+                    _ = store.LoadTools();
                 }
 
                 var storePlugins = store.Tools;

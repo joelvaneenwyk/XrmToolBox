@@ -11,6 +11,12 @@
           "DockPanelSuite": "3.1.0"
         }
       },
+      "jacobslusser.ScintillaNET": {
+        "type": "Direct",
+        "requested": "[3.6.3, )",
+        "resolved": "3.6.3",
+        "contentHash": "lERpP3K4x1ge5sW5eG+Yhv9sEFF4MDiHd/nuXTu/xSgPGODQo7K8hCEivqulrFypzFPZ+TsLDZoqucmi5blbdg=="
+      },
       "Microsoft.CSharp": {
         "type": "Direct",
         "requested": "[4.7.0, )",
@@ -275,7 +281,8 @@
           "Microsoft.NETCore.Targets": "[6.0.0-preview.4.21253.7, )",
           "System.ComponentModel.Composition": "[8.0.0, )",
           "System.Data.DataSetExtensions": "[4.5.0, )",
-          "System.Private.Uri": "[4.3.2, )"
+          "System.Private.Uri": "[4.3.2, )",
+          "System.Resources.Extensions": "[8.0.0, )"
         }
       },
       "xrmtoolbox.extensibility": {
@@ -290,7 +297,8 @@
           "System.ComponentModel.Composition": "[8.0.0, )",
           "System.Data.DataSetExtensions": "[4.5.0, )",
           "System.Numerics.Vectors": "[4.5.0, )",
-          "System.Private.Uri": "[4.3.2, )"
+          "System.Private.Uri": "[4.3.2, )",
+          "System.Resources.Extensions": "[8.0.0, )"
         }
       },
       "xrmtoolbox.toollibrary": {

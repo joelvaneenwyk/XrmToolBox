@@ -118,9 +118,7 @@ namespace XrmToolBox.AutoUpdater
             catch (Exception error)
             {
                 MessageBox.Show(this,
-                    $@"Unable to start XrmToolBox for the following reason: {error.Message}. File not found : {
-                            xtbPath
-                        }", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    $@"Unable to start XrmToolBox for the following reason: {error.Message}. File not found : {xtbPath}", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
