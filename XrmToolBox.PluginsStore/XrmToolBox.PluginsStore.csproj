@@ -38,9 +38,9 @@
   <ItemGroup>
     <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="NuGet.Frameworks" Version="6.9.1" />
-    <PackageReference Include="NuGet.Protocol" Version="6.9.1" />
-    <PackageReference Include="NuGet.Versioning" Version="6.9.1" />
+    <PackageReference Include="NuGet.Frameworks" Version="6.10.1" />
+    <PackageReference Include="NuGet.Protocol" Version="6.10.1" />
+    <PackageReference Include="NuGet.Versioning" Version="6.10.1" />
     <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="System.Private.Uri" Version="4.3.2" />
